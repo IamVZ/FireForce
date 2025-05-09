@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{646758DB-F8E5-4BA4-ACCF-C0B4B9943C8E}</ProjectGuid>
+    <ProjectGuid>{0C73E1AA-16B9-4A96-8A2B-516006F8C2AD}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>caserneUserControl</RootNamespace>
-    <AssemblyName>caserneUserControl</AssemblyName>
+    <RootNamespace>LibraryUserControl</RootNamespace>
+    <AssemblyName>LibraryUserControl</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,27 +47,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="uc2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc2.Designer.cs">
-      <DependentUpon>uc2.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucNewMission.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucNewMission.Designer.cs">
       <DependentUpon>ucNewMission.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="uc2.resx">
-      <DependentUpon>uc2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucNewMission.resx">
       <DependentUpon>ucNewMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
