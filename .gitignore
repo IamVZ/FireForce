@@ -3,6 +3,8 @@
 [Oo]bj/
 [Ll]og/
 *.log
+.vs/
+
 
 ## User-specific files
 *.user
