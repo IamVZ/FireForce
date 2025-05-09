@@ -4,6 +4,9 @@
 [Ll]og/
 .vs/
 *.log
+.vs/
+*.config
+
 
 ## User-specific files
 *.user
