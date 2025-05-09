@@ -1,0 +1,51 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## MonoDevelop
+*.userprefs
+
+## Windows image artifacts
+Thumbs.db
+ehthumbs.db
+*.stackdump
+*.Zone.Identifier
+
+## Visual Studio Code
+.vscode/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Others
+*.cache
+*.dbmdl
+*.bak
+*.tmp
+
+## Rider
+.idea/
+
+## ReSharper
+*.DotSettings.user
+
+## DotCover
+*.dotCover
+
+## Publish
+publish/
+
