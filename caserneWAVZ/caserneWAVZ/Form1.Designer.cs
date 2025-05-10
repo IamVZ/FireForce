@@ -29,23 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucTableauDeBordCase1 = new LibraryUserControl.ucTableauDeBordCase();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(14, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 775);
+            this.panel1.Size = new System.Drawing.Size(281, 969);
             this.panel1.TabIndex = 0;
+            // 
+            // ucTableauDeBordCase1
+            // 
+            this.ucTableauDeBordCase1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ucTableauDeBordCase1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ucTableauDeBordCase1.Location = new System.Drawing.Point(327, 38);
+            this.ucTableauDeBordCase1.Name = "ucTableauDeBordCase1";
+            this.ucTableauDeBordCase1.Size = new System.Drawing.Size(722, 195);
+            this.ucTableauDeBordCase1.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1493, 799);
+            this.ClientSize = new System.Drawing.Size(1680, 999);
+            this.Controls.Add(this.ucTableauDeBordCase1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -56,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private LibraryUserControl.ucTableauDeBordCase ucTableauDeBordCase1;
     }
 }
 
