@@ -14,6 +14,7 @@ namespace caserneWAVZ
     public partial class Form1 : Form
     {
         private ucNewMission ucNM;
+
         public Form1()
         {
             InitializeComponent();
@@ -40,5 +41,30 @@ namespace caserneWAVZ
             ucNM.Dispose();
             ucNM = null;
         }
+
+        public string[] ObtenirInfosMission(int idMission)
+        {
+            DataTable tblMission = MesDatas.DsGlobal.Tables["Mission"];
+
+            DataRow[] lignes = tblMission.Select($"id = {idMission}");
+
+            if (lignes.Length == 0)
+                return null;
+
+            DataRow ligneMission = lignes[0];
+
+            DataRow ligneCaserne = ligneMission.GetParentRow("Mission_Caserne");
+            DataRow ligneSinistre = ligneMission.GetParentRow("Mission_Sinistre");
+
+            string nomCaserne = ligneCaserne?["nom"]?.ToString();
+            string raisonAppel = "-->" +ligneMission["motifAppel"].ToString();
+            string dateMission = "Début : " + ligneMission["dateHeureDepart"].ToString();
+            string typeSinistre = ligneSinistre?["libelle"].ToString();
+            string ID = "ID mission : " + ligneMission["id"].ToString();
+ 
+
+            return new string[] {ID, nomCaserne, dateMission,typeSinistre,raisonAppel };
+        }
+
     }
 }

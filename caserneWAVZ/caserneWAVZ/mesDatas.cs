@@ -8,11 +8,10 @@ using System.Data;
 
 namespace caserneWAVZ
 {
-    public class MesDatas
-    {
-        private static DataSet dsGlobal = new DataSet();
-     
-        public static DataSet DsGlobal { get {  return MesDatas.dsGlobal; } }
+ public class MesDatas
+{
+    private static DataSet dsGlobal = new DataSet();
+    public static DataSet DsGlobal { get { return MesDatas.dsGlobal; } }
 
         public static void FillDs()
         {
@@ -26,6 +25,15 @@ namespace caserneWAVZ
                 SQLiteDataAdapter da = new SQLiteDataAdapter(cd);
                 da.Fill(dsGlobal, nomTable);
             }
+
+            dsGlobal.Relations.Add("Mission_Caserne",
+            dsGlobal.Tables["Caserne"].Columns["id"],
+            dsGlobal.Tables["Mission"].Columns["idCaserne"]);
+
+            dsGlobal.Relations.Add("Mission_Sinistre",
+            dsGlobal.Tables["NatureSinistre"].Columns["id"],
+            dsGlobal.Tables["Mission"].Columns["idNatureSinistre"]);
         }
-    }
+}
+
 }

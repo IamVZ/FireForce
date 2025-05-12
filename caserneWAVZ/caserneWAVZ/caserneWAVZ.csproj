@@ -36,7 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LibraryUserControl">
+<<<<<<< HEAD
       <HintPath>..\..\LibraryUserControl\LibraryUserControl\bin\Debug\LibraryUserControl.dll</HintPath>
+=======
+      <HintPath>lib\LibraryUserControl.dll</HintPath>
+>>>>>>> d67f7f79ad0c27ba359ada8e0d3f2762613ca66c
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

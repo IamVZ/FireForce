@@ -54,12 +54,27 @@
       <DependentUpon>ucNewMission.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="ucTableauDeBordCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTableauDeBordCase.Designer.cs">
+      <DependentUpon>ucTableauDeBordCase.cs</DependentUpon>
+    </Compile>
+>>>>>>> d67f7f79ad0c27ba359ada8e0d3f2762613ca66c
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ucNewMission.resx">
       <DependentUpon>ucNewMission.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="ucTableauDeBordCase.resx">
+      <DependentUpon>ucTableauDeBordCase.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> d67f7f79ad0c27ba359ada8e0d3f2762613ca66c
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
