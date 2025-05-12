@@ -258,6 +258,7 @@
             this.Controls.Add(this.grpInfoUsage);
             this.Name = "ucNewMission";
             this.Size = new System.Drawing.Size(1212, 816);
+            this.Load += new System.EventHandler(this.ucNewMission_Load);
             this.grpInfoUsage.ResumeLayout(false);
             this.grpInfoUsage.PerformLayout();
             this.grpRegulateur.ResumeLayout(false);

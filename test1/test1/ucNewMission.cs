@@ -17,5 +17,9 @@ namespace test1
             InitializeComponent(); 
         }
 
+        private void ucNewMission_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

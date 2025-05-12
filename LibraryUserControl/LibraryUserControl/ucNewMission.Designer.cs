@@ -1,4 +1,4 @@
-﻿namespace ucNewMission
+﻿namespace NewMission
 {
     partial class ucNewMission
     {
@@ -44,15 +44,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblNatureSinistre = new System.Windows.Forms.Label();
             this.grpMobilisationPompier = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPompierMobilisee = new System.Windows.Forms.DataGridView();
+            this.dgvEngin = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.lblEnginMobiliser = new System.Windows.Forms.Label();
+            this.lblNumMission = new System.Windows.Forms.Label();
+            this.lblDateMission = new System.Windows.Forms.Label();
+            this.btnValide = new System.Windows.Forms.Button();
             this.grpInfoUsage.SuspendLayout();
             this.grpRegulateur.SuspendLayout();
             this.grpMobilisationPompier.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPompierMobilisee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEngin)).BeginInit();
             this.SuspendLayout();
             // 
             // grpInfoUsage
@@ -169,6 +172,7 @@
             this.cboCaserneMobiliser.Name = "cboCaserneMobiliser";
             this.cboCaserneMobiliser.Size = new System.Drawing.Size(222, 33);
             this.cboCaserneMobiliser.TabIndex = 12;
+            this.cboCaserneMobiliser.SelectedIndexChanged += new System.EventHandler(this.cboCaserneMobiliser_SelectedIndexChanged);
             // 
             // cboNatureSinistre
             // 
@@ -177,6 +181,7 @@
             this.cboNatureSinistre.Name = "cboNatureSinistre";
             this.cboNatureSinistre.Size = new System.Drawing.Size(222, 33);
             this.cboNatureSinistre.TabIndex = 11;
+            this.cboNatureSinistre.SelectedIndexChanged += new System.EventHandler(this.cboNatureSinistre_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -198,8 +203,8 @@
             // 
             // grpMobilisationPompier
             // 
-            this.grpMobilisationPompier.Controls.Add(this.dataGridView2);
-            this.grpMobilisationPompier.Controls.Add(this.dataGridView1);
+            this.grpMobilisationPompier.Controls.Add(this.dgvPompierMobilisee);
+            this.grpMobilisationPompier.Controls.Add(this.dgvEngin);
             this.grpMobilisationPompier.Controls.Add(this.label4);
             this.grpMobilisationPompier.Controls.Add(this.lblEnginMobiliser);
             this.grpMobilisationPompier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,25 +215,25 @@
             this.grpMobilisationPompier.TabStop = false;
             this.grpMobilisationPompier.Text = "Mobilisation des engins et des pompiers";
             // 
-            // dataGridView2
+            // dgvPompierMobilisee
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(515, 91);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(402, 156);
-            this.dataGridView2.TabIndex = 16;
+            this.dgvPompierMobilisee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPompierMobilisee.Location = new System.Drawing.Point(515, 91);
+            this.dgvPompierMobilisee.Name = "dgvPompierMobilisee";
+            this.dgvPompierMobilisee.RowHeadersWidth = 51;
+            this.dgvPompierMobilisee.RowTemplate.Height = 24;
+            this.dgvPompierMobilisee.Size = new System.Drawing.Size(402, 156);
+            this.dgvPompierMobilisee.TabIndex = 16;
             // 
-            // dataGridView1
+            // dgvEngin
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(402, 156);
-            this.dataGridView1.TabIndex = 15;
+            this.dgvEngin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEngin.Location = new System.Drawing.Point(36, 91);
+            this.dgvEngin.Name = "dgvEngin";
+            this.dgvEngin.RowHeadersWidth = 51;
+            this.dgvEngin.RowTemplate.Height = 24;
+            this.dgvEngin.Size = new System.Drawing.Size(402, 156);
+            this.dgvEngin.TabIndex = 15;
             // 
             // label4
             // 
@@ -248,16 +253,50 @@
             this.lblEnginMobiliser.TabIndex = 13;
             this.lblEnginMobiliser.Text = "Engin mobilisés";
             // 
+            // lblNumMission
+            // 
+            this.lblNumMission.AutoSize = true;
+            this.lblNumMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumMission.Location = new System.Drawing.Point(121, 30);
+            this.lblNumMission.Name = "lblNumMission";
+            this.lblNumMission.Size = new System.Drawing.Size(118, 25);
+            this.lblNumMission.TabIndex = 3;
+            this.lblNumMission.Text = "Mission n°   ";
+            // 
+            // lblDateMission
+            // 
+            this.lblDateMission.AutoSize = true;
+            this.lblDateMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateMission.Location = new System.Drawing.Point(638, 30);
+            this.lblDateMission.Name = "lblDateMission";
+            this.lblDateMission.Size = new System.Drawing.Size(149, 25);
+            this.lblDateMission.TabIndex = 4;
+            this.lblDateMission.Text = "déclenchée le : ";
+            // 
+            // btnValide
+            // 
+            this.btnValide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValide.Location = new System.Drawing.Point(853, 820);
+            this.btnValide.Name = "btnValide";
+            this.btnValide.Size = new System.Drawing.Size(128, 56);
+            this.btnValide.TabIndex = 5;
+            this.btnValide.Text = "valider";
+            this.btnValide.UseVisualStyleBackColor = true;
+            this.btnValide.Click += new System.EventHandler(this.btnValide_Click);
+            // 
             // ucNewMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.btnValide);
+            this.Controls.Add(this.lblDateMission);
+            this.Controls.Add(this.lblNumMission);
             this.Controls.Add(this.grpMobilisationPompier);
             this.Controls.Add(this.grpRegulateur);
             this.Controls.Add(this.grpInfoUsage);
             this.Name = "ucNewMission";
-            this.Size = new System.Drawing.Size(1212, 816);
+            this.Size = new System.Drawing.Size(1212, 895);
             this.Load += new System.EventHandler(this.ucNewMission_Load);
             this.grpInfoUsage.ResumeLayout(false);
             this.grpInfoUsage.PerformLayout();
@@ -265,9 +304,10 @@
             this.grpRegulateur.PerformLayout();
             this.grpMobilisationPompier.ResumeLayout(false);
             this.grpMobilisationPompier.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPompierMobilisee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEngin)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -291,7 +331,10 @@
         private System.Windows.Forms.GroupBox grpMobilisationPompier;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEnginMobiliser;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPompierMobilisee;
+        private System.Windows.Forms.DataGridView dgvEngin;
+        private System.Windows.Forms.Label lblNumMission;
+        private System.Windows.Forms.Label lblDateMission;
+        private System.Windows.Forms.Button btnValide;
     }
 }
