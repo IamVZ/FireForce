@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryUserControl;
 
 namespace caserneWAVZ
 {
@@ -29,6 +30,8 @@ namespace caserneWAVZ
             string info4 = info[3];
             string info5 = info[4];
             ucTableauDeBordCase1.remplirLabel(info1, info2, info3, info4, info5);
+
+            var gp = new GestionPompiers();
         }
 
         public string[] ObtenirInfosMission(int idMission)
@@ -55,5 +58,23 @@ namespace caserneWAVZ
             return new string[] {ID, nomCaserne, dateMission,typeSinistre,raisonAppel };
         }
 
+        private void btnGP_Click(object sender, EventArgs e)
+        {
+            Form popup = new Form();
+            popup.Text = "Gestion des Pompiers";
+            popup.Size = new Size(800, 600);
+
+            var gp = new GestionPompiers();
+            gp.Dock = DockStyle.Fill;
+
+            
+            gp.RetourClicked += (s, args) =>
+            {
+                popup.Close();
+            };
+
+            popup.Controls.Add(gp);
+            popup.Show();
+        }
     }
 }

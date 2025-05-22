@@ -63,11 +63,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionPompiers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GestionPompiers.Designer.cs">
+      <DependentUpon>GestionPompiers.cs</DependentUpon>
+    </Compile>
     <Compile Include="mesDatas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionPompiers.resx">
+      <DependentUpon>GestionPompiers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

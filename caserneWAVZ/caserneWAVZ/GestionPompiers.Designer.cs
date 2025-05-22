@@ -34,8 +34,8 @@
             this.lblNewCompte = new System.Windows.Forms.Label();
             this.imgNewCompte = new System.Windows.Forms.PictureBox();
             this.imgUtilisateur = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPompiers = new System.Windows.Forms.ComboBox();
+            this.cmbCaserne = new System.Windows.Forms.ComboBox();
             this.lblpompier = new System.Windows.Forms.Label();
             this.lblCaserne = new System.Windows.Forms.Label();
             this.grpInfoNorm = new System.Windows.Forms.GroupBox();
@@ -86,8 +86,8 @@
             this.grpLoginUtilisateur.Controls.Add(this.lblNewCompte);
             this.grpLoginUtilisateur.Controls.Add(this.imgNewCompte);
             this.grpLoginUtilisateur.Controls.Add(this.imgUtilisateur);
-            this.grpLoginUtilisateur.Controls.Add(this.comboBox2);
-            this.grpLoginUtilisateur.Controls.Add(this.comboBox1);
+            this.grpLoginUtilisateur.Controls.Add(this.cmbPompiers);
+            this.grpLoginUtilisateur.Controls.Add(this.cmbCaserne);
             this.grpLoginUtilisateur.Controls.Add(this.lblpompier);
             this.grpLoginUtilisateur.Controls.Add(this.lblCaserne);
             this.grpLoginUtilisateur.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -142,21 +142,21 @@
             this.imgUtilisateur.TabIndex = 4;
             this.imgUtilisateur.TabStop = false;
             // 
-            // comboBox2
+            // cmbPompiers
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(23, 457);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(485, 33);
-            this.comboBox2.TabIndex = 3;
+            this.cmbPompiers.FormattingEnabled = true;
+            this.cmbPompiers.Location = new System.Drawing.Point(23, 457);
+            this.cmbPompiers.Name = "cmbPompiers";
+            this.cmbPompiers.Size = new System.Drawing.Size(485, 33);
+            this.cmbPompiers.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbCaserne
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 285);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(485, 33);
-            this.comboBox1.TabIndex = 2;
+            this.cmbCaserne.FormattingEnabled = true;
+            this.cmbCaserne.Location = new System.Drawing.Point(23, 285);
+            this.cmbCaserne.Name = "cmbCaserne";
+            this.cmbCaserne.Size = new System.Drawing.Size(485, 33);
+            this.cmbCaserne.TabIndex = 2;
             // 
             // lblpompier
             // 
@@ -510,8 +510,8 @@
         private System.Windows.Forms.Label lblNewCompte;
         private System.Windows.Forms.PictureBox imgNewCompte;
         private System.Windows.Forms.PictureBox imgUtilisateur;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPompiers;
+        private System.Windows.Forms.ComboBox cmbCaserne;
         private System.Windows.Forms.Label lblpompier;
         private System.Windows.Forms.Label lblCaserne;
         private System.Windows.Forms.PictureBox imgGrade;

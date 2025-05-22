@@ -12,6 +12,9 @@ namespace LibraryUserControl
 {
     public partial class GestionPompiers : UserControl
     {
+        DataSet ds;
+
+        public DataSet Ds { get => ds; set => ds = value; }
         public GestionPompiers()
         {
             InitializeComponent();
@@ -27,5 +30,12 @@ namespace LibraryUserControl
             grpInfoExtend.Visible = true;
             btnExtendedInfo.Visible = false;
         }
+
+        public void lblRetour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public Label LblRetour => lblRetour;
     }
 }
