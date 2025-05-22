@@ -28,15 +28,15 @@ namespace caserneWAVZ
 
         private void btnNewMission_Click(object sender, EventArgs e)
         {
-            ucNM = new ucNewMission();
-            ucNM.dsMission = MesDatas.DsGlobal;
-            ucNM.Location = new Point(210, 12);
+            ucNM = new ucNewMission(MesDatas.DsGlobal);
+            ucNM.Location = new Point(330, 12);
             
             this.Controls.Add(ucNM);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             this.Controls.Remove(ucNM);
             ucNM.Dispose();
             ucNM = null;
@@ -66,5 +66,17 @@ namespace caserneWAVZ
             return new string[] {ID, nomCaserne, dateMission,typeSinistre,raisonAppel };
         }
 
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            /*
+            DataRow[] dr = MesDatas.DsGlobal.Tables["Mission"].Select("idMission = 9");
+            DataTable dt = MesDatas.DsGlobal.Tables["Mission"].Clone();
+            foreach(DataRow d in dr)
+            {
+                dt.ImportRow(d);
+            }
+            dgvTest.DataSource = dt; */
+
+        }
     }
 }

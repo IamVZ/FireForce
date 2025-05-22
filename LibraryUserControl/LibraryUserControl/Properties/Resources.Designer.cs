@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace caserneWAVZ.Properties {
+namespace LibraryUserControl.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace caserneWAVZ.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("caserneWAVZ.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LibraryUserControl.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace caserneWAVZ.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fond2 {
+        internal static System.Drawing.Bitmap fond1 {
             get {
-                object obj = ResourceManager.GetObject("fond2", resourceCulture);
+                object obj = ResourceManager.GetObject("fond1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
