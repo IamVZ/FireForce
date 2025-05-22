@@ -28,7 +28,7 @@ namespace LibraryUserControl
 
             AjusterTaillePolice(lblIDMission);
             AjusterTaillePolice(lblNomCaserne);
-            AjusterTaillePolice(lblDebut);
+            AjusterTaillePolice(lblDebut);  
             AjusterTaillePolice(lblCause);
             AjusterTaillePolice(lblDesc);
         }
@@ -59,5 +59,36 @@ namespace LibraryUserControl
             AjusterTaillePolice(lblCause);
             AjusterTaillePolice(lblDesc);
         }
+
+        public string IDMission
+        {
+            get { return lblIDMission.Text; }
+            set { lblIDMission.Text = value; }
+        }
+
+        public string NomCaserne
+        {
+            get { return lblNomCaserne.Text; }
+            set { lblNomCaserne.Text = value; }
+        }
+
+        public string Debut
+        {
+            get { return lblDebut.Text; }
+            set { lblDebut.Text = value; }
+        }
+
+        public string Cause
+        {
+            get { return lblCause.Text; }
+            set { lblCause.Text = value; }
+        }
+
+        public string Description
+        {
+            get { return lblDesc.Text; }
+            set { lblDesc.Text = value; }
+        }
+
     }
 }
