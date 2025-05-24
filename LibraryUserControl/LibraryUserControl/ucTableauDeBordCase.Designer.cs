@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbMission = new System.Windows.Forms.PictureBox();
             this.lblIDMission = new System.Windows.Forms.Label();
             this.lblDebut = new System.Windows.Forms.Label();
             this.lblNomCaserne = new System.Windows.Forms.Label();
             this.lblCause = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
             this.pnlInfo = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMission)).BeginInit();
+            this.pbMission = new System.Windows.Forms.PictureBox();
             this.pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMission)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbMission
-            // 
-            this.pbMission.Location = new System.Drawing.Point(14, 20);
-            this.pbMission.Name = "pbMission";
-            this.pbMission.Size = new System.Drawing.Size(131, 135);
-            this.pbMission.TabIndex = 1;
-            this.pbMission.TabStop = false;
             // 
             // lblIDMission
             // 
@@ -99,18 +91,28 @@
             // 
             // pnlInfo
             // 
-            this.pnlInfo.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlInfo.BackColor = System.Drawing.Color.IndianRed;
+            this.pnlInfo.Controls.Add(this.pbMission);
             this.pnlInfo.Controls.Add(this.lblDesc);
             this.pnlInfo.Controls.Add(this.lblCause);
             this.pnlInfo.Controls.Add(this.lblNomCaserne);
             this.pnlInfo.Controls.Add(this.lblDebut);
             this.pnlInfo.Controls.Add(this.lblIDMission);
-            this.pnlInfo.Controls.Add(this.pbMission);
             this.pnlInfo.Location = new System.Drawing.Point(3, 3);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(716, 189);
             this.pnlInfo.TabIndex = 0;
             this.pnlInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pbMission
+            // 
+            this.pbMission.Location = new System.Drawing.Point(14, 20);
+            this.pbMission.Name = "pbMission";
+            this.pbMission.Size = new System.Drawing.Size(131, 135);
+            this.pbMission.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMission.TabIndex = 1;
+            this.pbMission.TabStop = false;
+            this.pbMission.Click += new System.EventHandler(this.pbMission_Click);
             // 
             // ucTableauDeBordCase
             // 
@@ -122,9 +124,9 @@
             this.Name = "ucTableauDeBordCase";
             this.Size = new System.Drawing.Size(722, 195);
             this.Load += new System.EventHandler(this.ucTableauDeBordCase_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMission)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMission)).EndInit();
             this.ResumeLayout(false);
 
         }

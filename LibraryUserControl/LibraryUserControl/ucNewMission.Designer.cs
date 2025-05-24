@@ -51,6 +51,7 @@
             this.lblNumMission = new System.Windows.Forms.Label();
             this.lblDateMission = new System.Windows.Forms.Label();
             this.btnValide = new System.Windows.Forms.Button();
+            this.btnConsulter = new System.Windows.Forms.Button();
             this.grpInfoUsage.SuspendLayout();
             this.grpRegulateur.SuspendLayout();
             this.grpMobilisationPompier.SuspendLayout();
@@ -136,6 +137,7 @@
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(370, 30);
             this.txtVille.TabIndex = 2;
+            this.txtVille.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVille_KeyPress);
             // 
             // txtCP
             // 
@@ -143,6 +145,7 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(370, 30);
             this.txtCP.TabIndex = 1;
+            this.txtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCP_KeyPress);
             // 
             // txtRue
             // 
@@ -218,27 +221,27 @@
             // dgvPompierMobilisee
             // 
             this.dgvPompierMobilisee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPompierMobilisee.Location = new System.Drawing.Point(515, 91);
+            this.dgvPompierMobilisee.Location = new System.Drawing.Point(471, 91);
             this.dgvPompierMobilisee.Name = "dgvPompierMobilisee";
             this.dgvPompierMobilisee.RowHeadersWidth = 51;
             this.dgvPompierMobilisee.RowTemplate.Height = 24;
-            this.dgvPompierMobilisee.Size = new System.Drawing.Size(402, 156);
+            this.dgvPompierMobilisee.Size = new System.Drawing.Size(613, 156);
             this.dgvPompierMobilisee.TabIndex = 16;
             // 
             // dgvEngin
             // 
             this.dgvEngin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEngin.Location = new System.Drawing.Point(36, 91);
+            this.dgvEngin.Location = new System.Drawing.Point(17, 91);
             this.dgvEngin.Name = "dgvEngin";
             this.dgvEngin.RowHeadersWidth = 51;
             this.dgvEngin.RowTemplate.Height = 24;
-            this.dgvEngin.Size = new System.Drawing.Size(402, 156);
+            this.dgvEngin.Size = new System.Drawing.Size(448, 156);
             this.dgvEngin.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(634, 47);
+            this.label4.Location = new System.Drawing.Point(701, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 25);
             this.label4.TabIndex = 14;
@@ -247,7 +250,7 @@
             // lblEnginMobiliser
             // 
             this.lblEnginMobiliser.AutoSize = true;
-            this.lblEnginMobiliser.Location = new System.Drawing.Point(161, 47);
+            this.lblEnginMobiliser.Location = new System.Drawing.Point(163, 47);
             this.lblEnginMobiliser.Name = "lblEnginMobiliser";
             this.lblEnginMobiliser.Size = new System.Drawing.Size(148, 25);
             this.lblEnginMobiliser.TabIndex = 13;
@@ -284,11 +287,25 @@
             this.btnValide.UseVisualStyleBackColor = true;
             this.btnValide.Click += new System.EventHandler(this.btnValide_Click);
             // 
+            // btnConsulter
+            // 
+            this.btnConsulter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulter.Location = new System.Drawing.Point(689, 820);
+            this.btnConsulter.Name = "btnConsulter";
+            this.btnConsulter.Size = new System.Drawing.Size(128, 56);
+            this.btnConsulter.TabIndex = 6;
+            this.btnConsulter.Text = "consulter";
+            this.btnConsulter.UseVisualStyleBackColor = true;
+            this.btnConsulter.Click += new System.EventHandler(this.btnConsulter_Click);
+            // 
             // ucNewMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.Color.Firebrick;
+            this.BackgroundImage = global::LibraryUserControl.Properties.Resources.fond1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnConsulter);
             this.Controls.Add(this.btnValide);
             this.Controls.Add(this.lblDateMission);
             this.Controls.Add(this.lblNumMission);
@@ -296,7 +313,7 @@
             this.Controls.Add(this.grpRegulateur);
             this.Controls.Add(this.grpInfoUsage);
             this.Name = "ucNewMission";
-            this.Size = new System.Drawing.Size(1212, 895);
+            this.Size = new System.Drawing.Size(1530, 950);
             this.Load += new System.EventHandler(this.ucNewMission_Load);
             this.grpInfoUsage.ResumeLayout(false);
             this.grpInfoUsage.PerformLayout();
@@ -336,5 +353,6 @@
         private System.Windows.Forms.Label lblNumMission;
         private System.Windows.Forms.Label lblDateMission;
         private System.Windows.Forms.Button btnValide;
+        private System.Windows.Forms.Button btnConsulter;
     }
 }

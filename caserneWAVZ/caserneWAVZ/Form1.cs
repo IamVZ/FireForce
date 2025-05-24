@@ -30,15 +30,18 @@ namespace caserneWAVZ
 
         private void btnNewMission_Click(object sender, EventArgs e)
         {
-            ucNM = new ucNewMission();
-            ucNM.dsMission = MesDatas.DsGlobal;
-            ucNM.Location = new Point(330, 12);
 
+
+
+            ucNM = new ucNewMission(MesDatas.DsGlobal);
+            ucNM.Location = new Point(330, 12);
+         
             this.Controls.Add(ucNM);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             this.Controls.Remove(ucNM);
             ucNM.Dispose();
             ucNM = null;
@@ -63,8 +66,9 @@ namespace caserneWAVZ
             string dateMission = "Début : " + ligneMission["dateHeureDepart"].ToString();
             string typeSinistre = ligneSinistre?["libelle"].ToString();
             string ID = "ID mission : " + ligneMission["id"].ToString();
+            string natureSinistre = ligneMission["idNatureSinistre"].ToString();
 
-            return new string[] { ID, nomCaserne, dateMission, typeSinistre, raisonAppel };
+            return new string[] { ID, nomCaserne, dateMission, typeSinistre, raisonAppel,natureSinistre};
         }
 
         public void MarquerMissionTerminee(int idMission)
@@ -216,27 +220,63 @@ namespace caserneWAVZ
             return ids;
         }
 
-        private void btnTab_Click(object sender, EventArgs e)
+
+        private void btnTest_Click(object sender, EventArgs e)
         {
-            tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
-            tableauDeBord.GetMissionInfos = ObtenirInfosMission;
-            tableauDeBord.ValiderMission = MarquerMissionTerminee;
-            tableauDeBord.GetMissionsEnCours = ObtenirMissionsEnCours;
-            tableauDeBord.GetAllMission = ObtenirTouteLesMissionsEnCours;
-
-            tableauDeBord.Location = new Point(330, 12);
-
-            this.Controls.Add(tableauDeBord);
-
-            List<int> ids = new List<int>();
-            DataTable missionTable = MesDatas.DsGlobal.Tables["Mission"];
-            foreach (DataRow row in missionTable.Rows)
+            /*
+            DataRow[] dr = MesDatas.DsGlobal.Tables["Mission"].Select("idMission = 9");
+            DataTable dt = MesDatas.DsGlobal.Tables["Mission"].Clone();
+            foreach(DataRow d in dr)
             {
-                ids.Add(Convert.ToInt32(row["id"]));
+                dt.ImportRow(d);
             }
-
-            tableauDeBord.InitialiserCasesAvecMissions(ids);
+            dgvTest.DataSource = dt; */
 
         }
+
+        private void btnTab_Click_1(object sender, EventArgs e)
+        {
+            // Si le tableau de bord est déjà là, on ne fait rien
+            if (tableauDeBord != null)
+            {
+                btnTab1.Enabled = false; // le désactiver pour montrer qu'on y est déjà
+                return;
+            }
+
+            try
+            {
+                tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
+                tableauDeBord.GetMissionInfos = ObtenirInfosMission;
+                tableauDeBord.ValiderMission = MarquerMissionTerminee;
+                tableauDeBord.GetMissionsEnCours = ObtenirMissionsEnCours;
+                tableauDeBord.GetAllMission = ObtenirTouteLesMissionsEnCours;
+                tableauDeBord.Location = new Point(330, 12);
+
+                this.Controls.Add(tableauDeBord);
+                btnTab1.Enabled = false; // désactive après ajout
+
+                // Quand on ferme ou supprime le tableau de bord : le bouton sera réactivé (tu peux appeler cette logique où tu le retires)
+                tableauDeBord.Disposed += (s, args) =>
+                {
+                    tableauDeBord = null;
+                    btnTab1.Enabled = true;
+                };
+
+                List<int> ids = new List<int>();
+                DataTable missionTable = MesDatas.DsGlobal.Tables["Mission"];
+                foreach (DataRow row in missionTable.Rows)
+                {
+                    ids.Add(Convert.ToInt32(row["id"]));
+                }
+
+                tableauDeBord.InitialiserCasesAvecMissions(ids);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message, "Erreur Tableau de Bord", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

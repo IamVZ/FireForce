@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
@@ -15,7 +17,7 @@ namespace LibraryUserControl
     public partial class TableauDeBord : UserControl
     {
 
-        //Tout les delegates nécessaire que ça soit pour terminer la mission, ou remplir les infos selon si EnCours checked.
+        //Tout les delegates nécessaire que ça soit pour terminer la mission, ou remplir les infos selon si EnCours checked (comme ça je m'entraine sur les delegate).
         public delegate string[] DelegateObtenirInfosMission(int idMission);
         public DelegateObtenirInfosMission GetMissionInfos { get; set; }
 
@@ -63,13 +65,31 @@ namespace LibraryUserControl
                 ucTableauDeBordCase mission = new ucTableauDeBordCase();
                 mission.remplirLabel(infos[0], infos[1], infos[2], infos[3], infos[4]);
 
-                Button boutonPDF = new Button { Size = new Size(60, 60), Text = "PDF" };
+                Button boutonPDF = new Button
+                {
+                    Size = new Size(150, 60),
+                    Text = "Convertir\n en PDF",
+                    Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold),
+                    BackColor = Color.FromArgb(50, 0, 0),
+                    ForeColor = Color.White,
+                    FlatStyle = FlatStyle.Flat,
+                    Cursor = Cursors.Hand
+                };
                 boutonPDF.Click += (s, e) =>
                 {
                     ExporterMissionEnPDF(mission);
                 };
 
-                Button boutonValider = new Button { Size = new Size(60, 60), Text = "Terminer !!!!" };
+                Button boutonValider = new Button
+                {
+                    Size = new Size(150, 60),
+                    Text = "Terminer",
+                    Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold),
+                    BackColor = Color.FromArgb(0, 0, 107),
+                    ForeColor = Color.White,
+                    FlatStyle = FlatStyle.Flat,
+                    Cursor = Cursors.Hand
+                };
                 boutonValider.Click += (s, e) =>
                 {
                     if (ValiderMission != null)
@@ -82,6 +102,8 @@ namespace LibraryUserControl
                         }
                     }
                 };
+
+                mission.ImageMission = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject("_" + infos[5]);
 
 
                 mission.Location = new Point(x, y);
@@ -117,35 +139,46 @@ namespace LibraryUserControl
                             iTextSharp.text.pdf.PdfWriter.GetInstance(doc, fs);
                             doc.Open();
 
+                            // Définition des polices
                             var titreFont = FontFactory.GetFont("Arial", 16, iTextSharp.text.Font.BOLD);
+                            var sectionFont = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD, BaseColor.DARK_GRAY);
                             var labelFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD);
                             var normalFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL);
 
+                            // Titre du document
                             doc.Add(new Paragraph("Rapport de Mission", titreFont));
                             doc.Add(new Paragraph(" "));
 
+                            // Récupération de l'ID de la mission
                             string idStr = mission.IDMission.Replace("ID mission : ", "");
                             if (int.TryParse(idStr, out int idMission))
                             {
                                 DataRow missionRow = dataSet.Tables["Mission"].Select($"id = {idMission}").FirstOrDefault();
                                 if (missionRow != null)
                                 {
+                                    // Récupération des informations générales
+                                    string depart = missionRow["dateHeureDepart"]?.ToString() ?? "Non renseigné";
                                     string retour = missionRow["dateHeureRetour"]?.ToString();
-                                    string adresse = missionRow["adresse"]?.ToString();
-                                    string cp = missionRow["cp"]?.ToString();
-                                    string ville = missionRow["ville"]?.ToString();
-                                    string compteRendu = missionRow["compteRendu"]?.ToString();
+                                    string adresse = missionRow["adresse"]?.ToString() ?? "Non renseignée";
+                                    string cp = missionRow["cp"]?.ToString() ?? "";
+                                    string ville = missionRow["ville"]?.ToString() ?? "";
+                                    string motif = missionRow["motifAppel"]?.ToString() ?? "Non précisé";
+                                    string compteRendu = missionRow["compteRendu"]?.ToString() ?? "Non renseigné";
+
+                                    // SECTION : Informations générales
+                                    doc.Add(new Paragraph("Informations Générales", sectionFont));
+                                    doc.Add(new Paragraph(" ", normalFont));
 
                                     doc.Add(new Paragraph("Identifiant de la mission :", labelFont));
                                     doc.Add(new Paragraph(mission.IDMission, normalFont));
                                     doc.Add(new Paragraph(" "));
 
                                     doc.Add(new Paragraph("Heure de départ :", labelFont));
-                                    doc.Add(new Paragraph(mission.Debut, normalFont));
+                                    doc.Add(new Paragraph(depart, normalFont));
                                     doc.Add(new Paragraph(" "));
 
                                     doc.Add(new Paragraph("Motif de l’appel :", labelFont));
-                                    doc.Add(new Paragraph(mission.Cause, normalFont));
+                                    doc.Add(new Paragraph(motif, normalFont));
                                     doc.Add(new Paragraph(" "));
 
                                     doc.Add(new Paragraph("Description de la mission :", labelFont));
@@ -161,25 +194,92 @@ namespace LibraryUserControl
                                     doc.Add(new Paragraph(" "));
 
                                     doc.Add(new Paragraph("Compte-rendu :", labelFont));
-                                    doc.Add(new Paragraph(compteRendu ?? "Non renseigné", normalFont));
+                                    doc.Add(new Paragraph(compteRendu, normalFont));
                                     doc.Add(new Paragraph(" "));
 
-                                    // Engins mobilisés (via PartirAvec)
+                                    // SECTION : Engins Mobilisés
                                     var engins = dataSet.Tables["PartirAvec"].Select($"idMission = {idMission}");
                                     if (engins.Length > 0)
                                     {
-                                        doc.Add(new Paragraph("Engins mobilisés :", labelFont));
-                                        foreach (var engin in engins)
+                                        doc.Add(new Paragraph("Engins Mobilisés", sectionFont));
+                                        doc.Add(new Paragraph(" "));
+
+                                        // Création d'un tableau PDF avec 3 colonnes
+                                        iTextSharp.text.pdf.PdfPTable tableEngins = new iTextSharp.text.pdf.PdfPTable(3);
+                                        tableEngins.WidthPercentage = 100;
+                                        tableEngins.SetWidths(new float[] { 3, 1, 3 });
+
+                                        // En-têtes du tableau
+                                        tableEngins.AddCell(new iTextSharp.text.Phrase("Type d'engin", labelFont));
+                                        tableEngins.AddCell(new iTextSharp.text.Phrase("Numéro", labelFont));
+                                        tableEngins.AddCell(new iTextSharp.text.Phrase("Commentaires", labelFont));
+
+                                        foreach (DataRow engin in engins)
                                         {
                                             string codeType = engin["codeTypeEngin"]?.ToString();
                                             string numero = engin["numeroEngin"]?.ToString();
 
-                                            // Optionnel : aller chercher le nom du type d'engin depuis TypeEngin
+                                            // Récupérer le nom depuis la table TypeEngin
                                             var typeRow = dataSet.Tables["TypeEngin"].Select($"code = '{codeType}'").FirstOrDefault();
-                                            string nomType = typeRow?["nom"]?.ToString();
+                                            string nomType = typeRow?["nom"]?.ToString() ?? codeType;
 
-                                            doc.Add(new Paragraph($"- {nomType ?? codeType} n°{numero}", normalFont));
+                                            // Pour les commentaires ou réparations éventuelles (si la colonne existe)
+                                            string commentaires = engin.Table.Columns.Contains("reparationsEventuelles")
+                                                ? engin["reparationsEventuelles"]?.ToString()
+                                                : "";
+
+                                            tableEngins.AddCell(new iTextSharp.text.Phrase(nomType, normalFont));
+                                            tableEngins.AddCell(new iTextSharp.text.Phrase(numero, normalFont));
+                                            tableEngins.AddCell(new iTextSharp.text.Phrase(commentaires, normalFont));
                                         }
+
+                                        doc.Add(tableEngins);
+                                        doc.Add(new Paragraph(" "));
+                                    }
+                                    else
+                                    {
+                                        doc.Add(new Paragraph("Aucun engin mobilisé.", normalFont));
+                                        doc.Add(new Paragraph(" "));
+                                    }
+
+                                    // SECTION : Pompiers Mobilisés
+                                    var mobilises = dataSet.Tables["Mobiliser"].Select($"idMission = {idMission}");
+                                    if (mobilises.Length > 0)
+                                    {
+                                        doc.Add(new Paragraph("Pompiers Mobilisés", sectionFont));
+                                        doc.Add(new Paragraph(" "));
+
+                                        // Création d'un tableau avec 3 colonnes
+                                        iTextSharp.text.pdf.PdfPTable tablePompiers = new iTextSharp.text.pdf.PdfPTable(3);
+                                        tablePompiers.WidthPercentage = 100;
+                                        tablePompiers.SetWidths(new float[] { 3, 3, 2 });
+
+                                        // En-têtes
+                                        tablePompiers.AddCell(new iTextSharp.text.Phrase("Nom", labelFont));
+                                        tablePompiers.AddCell(new iTextSharp.text.Phrase("Prénom", labelFont));
+                                        tablePompiers.AddCell(new iTextSharp.text.Phrase("Matricule", labelFont));
+
+                                        foreach (DataRow mobilise in mobilises)
+                                        {
+                                            // Supposons que la table Mobiliser contient le matricule
+                                            string matricule = mobilise["matriculePompier"]?.ToString();
+
+                                            // Récupérer les infos du pompier depuis la table Pompier
+                                            var pompierRow = dataSet.Tables["Pompier"].Select($"matricule = {matricule}").FirstOrDefault();
+                                            string nom = pompierRow?["nom"]?.ToString() ?? "-";
+                                            string prenom = pompierRow?["prenom"]?.ToString() ?? "-";
+
+                                            tablePompiers.AddCell(new iTextSharp.text.Phrase(nom, normalFont));
+                                            tablePompiers.AddCell(new iTextSharp.text.Phrase(prenom, normalFont));
+                                            tablePompiers.AddCell(new iTextSharp.text.Phrase(matricule, normalFont));
+                                        }
+
+                                        doc.Add(tablePompiers);
+                                        doc.Add(new Paragraph(" "));
+                                    }
+                                    else
+                                    {
+                                        doc.Add(new Paragraph("Aucun pompier mobilisé.", normalFont));
                                         doc.Add(new Paragraph(" "));
                                     }
                                 }
@@ -197,6 +297,7 @@ namespace LibraryUserControl
                 }
             }
         }
+
 
 
 
