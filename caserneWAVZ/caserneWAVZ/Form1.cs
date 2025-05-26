@@ -243,8 +243,7 @@ namespace caserneWAVZ
                 return;
             }
 
-            try
-            {
+
                 tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
                 tableauDeBord.GetMissionInfos = ObtenirInfosMission;
                 tableauDeBord.ValiderMission = MarquerMissionTerminee;
@@ -270,11 +269,7 @@ namespace caserneWAVZ
                 }
 
                 tableauDeBord.InitialiserCasesAvecMissions(ids);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur Tableau de Bord", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
 
