@@ -39,10 +39,9 @@
             this.chkEnCours.BackColor = System.Drawing.Color.Transparent;
             this.chkEnCours.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEnCours.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.chkEnCours.Location = new System.Drawing.Point(34, 38);
-            this.chkEnCours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chkEnCours.Location = new System.Drawing.Point(30, 30);
             this.chkEnCours.Name = "chkEnCours";
-            this.chkEnCours.Size = new System.Drawing.Size(123, 29);
+            this.chkEnCours.Size = new System.Drawing.Size(98, 24);
             this.chkEnCours.TabIndex = 0;
             this.chkEnCours.Text = "En cours";
             this.chkEnCours.UseVisualStyleBackColor = false;
@@ -55,34 +54,33 @@
             this.lblTabBord.BackColor = System.Drawing.Color.Transparent;
             this.lblTabBord.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTabBord.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTabBord.Location = new System.Drawing.Point(676, 27);
+            this.lblTabBord.Location = new System.Drawing.Point(601, 22);
             this.lblTabBord.Name = "lblTabBord";
-            this.lblTabBord.Size = new System.Drawing.Size(294, 40);
+            this.lblTabBord.Size = new System.Drawing.Size(247, 36);
             this.lblTabBord.TabIndex = 1;
             this.lblTabBord.Text = "Tableau de bord";
             // 
             // pnlMission
             // 
             this.pnlMission.AutoScroll = true;
-            this.pnlMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlMission.Location = new System.Drawing.Point(106, 129);
-            this.pnlMission.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlMission.Location = new System.Drawing.Point(94, 103);
             this.pnlMission.Name = "pnlMission";
-            this.pnlMission.Size = new System.Drawing.Size(1488, 921);
+            this.pnlMission.Size = new System.Drawing.Size(1323, 737);
             this.pnlMission.TabIndex = 3;
             // 
             // TableauDeBord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = global::LibraryUserControl.Properties.Resources.fond1;
             this.Controls.Add(this.pnlMission);
             this.Controls.Add(this.lblTabBord);
             this.Controls.Add(this.chkEnCours);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DoubleBuffered = true;
             this.Name = "TableauDeBord";
-            this.Size = new System.Drawing.Size(1721, 1188);
+            this.Size = new System.Drawing.Size(1530, 950);
             this.ResumeLayout(false);
             this.PerformLayout();
 
