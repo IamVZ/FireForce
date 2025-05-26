@@ -318,7 +318,7 @@
             this.lblTitre.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblTitre.Location = new System.Drawing.Point(582, 51);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(353, 52);
+            this.lblTitre.Size = new System.Drawing.Size(350, 51);
             this.lblTitre.TabIndex = 7;
             this.lblTitre.Text = "Nouvelle Mission";
             // 
