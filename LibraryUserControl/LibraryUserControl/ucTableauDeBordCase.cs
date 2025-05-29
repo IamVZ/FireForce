@@ -20,23 +20,22 @@ namespace LibraryUserControl
 
         public void remplirLabel(string info1, string info2, string info3, string info4, string info5)
         {
+
             lblIDMission.Text = info1;
             lblNomCaserne.Text = info2;
             lblDebut.Text = info3;
             lblCause.Text = info4;
             lblDesc.Text = info5;
 
-            lblIDMission.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
-            lblNomCaserne.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
+            lblIDMission.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold);
+            lblNomCaserne.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold);
             lblDebut.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
-            lblCause.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
+            lblCause.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold);
             lblDesc.Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold);
 
-            AjusterTaillePolice(lblIDMission);
-            AjusterTaillePolice(lblNomCaserne);
             AjusterTaillePolice(lblDebut);  
-            AjusterTaillePolice(lblCause);
-            AjusterTaillePolice(lblDesc);
+
+        
         }
 
         private void AjusterTaillePolice(Label lbl)
@@ -58,11 +57,9 @@ namespace LibraryUserControl
 
         private void ucTableauDeBordCase_Load(object sender, EventArgs e)
         {
-            AjusterTaillePolice(lblIDMission);
-            AjusterTaillePolice(lblNomCaserne);
+   
             AjusterTaillePolice(lblDebut);
-            AjusterTaillePolice(lblCause);
-            AjusterTaillePolice(lblDesc);
+
         }
 
         public string IDMission

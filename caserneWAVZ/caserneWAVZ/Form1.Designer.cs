@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTab1 = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNewMission = new System.Windows.Forms.Button();
-            this.btnTab1 = new System.Windows.Forms.Button();
+            this.btnStatistique = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnStatistique);
             this.panel1.Controls.Add(this.btnTab1);
             this.panel1.Controls.Add(this.btnTest);
             this.panel1.Controls.Add(this.button1);
@@ -49,10 +51,20 @@
             this.panel1.Size = new System.Drawing.Size(394, 1188);
             this.panel1.TabIndex = 0;
             // 
+            // btnTab1
+            // 
+            this.btnTab1.Location = new System.Drawing.Point(78, 36);
+            this.btnTab1.Name = "btnTab1";
+            this.btnTab1.Size = new System.Drawing.Size(231, 81);
+            this.btnTab1.TabIndex = 1;
+            this.btnTab1.Text = "Tableau de bor";
+            this.btnTab1.UseVisualStyleBackColor = true;
+            this.btnTab1.Click += new System.EventHandler(this.btnTab_Click_1);
+            // 
             // btnTest
             // 
             this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.Location = new System.Drawing.Point(78, 375);
+            this.btnTest.Location = new System.Drawing.Point(78, 565);
             this.btnTest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(231, 80);
@@ -64,7 +76,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(78, 259);
+            this.button1.Location = new System.Drawing.Point(78, 451);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(231, 81);
@@ -85,15 +97,17 @@
             this.btnNewMission.UseVisualStyleBackColor = true;
             this.btnNewMission.Click += new System.EventHandler(this.btnNewMission_Click);
             // 
-            // btnTab1
+            // btnStatistique
             // 
-            this.btnTab1.Location = new System.Drawing.Point(78, 36);
-            this.btnTab1.Name = "btnTab1";
-            this.btnTab1.Size = new System.Drawing.Size(231, 81);
-            this.btnTab1.TabIndex = 1;
-            this.btnTab1.Text = "Tableau de bor";
-            this.btnTab1.UseVisualStyleBackColor = true;
-            this.btnTab1.Click += new System.EventHandler(this.btnTab_Click_1);
+            this.btnStatistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistique.Location = new System.Drawing.Point(78, 252);
+            this.btnStatistique.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStatistique.Name = "btnStatistique";
+            this.btnStatistique.Size = new System.Drawing.Size(231, 86);
+            this.btnStatistique.TabIndex = 3;
+            this.btnStatistique.Text = "Statistique";
+            this.btnStatistique.UseVisualStyleBackColor = true;
+            this.btnStatistique.Click += new System.EventHandler(this.btnStatistique_Click);
             // 
             // Form1
             // 
@@ -122,6 +136,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnTab1;
+        private System.Windows.Forms.Button btnStatistique;
     }
 }
 

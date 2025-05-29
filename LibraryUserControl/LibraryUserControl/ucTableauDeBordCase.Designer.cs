@@ -81,6 +81,7 @@
             // 
             // lblDesc
             // 
+            this.lblDesc.AutoEllipsis = true;
             this.lblDesc.AutoSize = true;
             this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.Location = new System.Drawing.Point(185, 126);

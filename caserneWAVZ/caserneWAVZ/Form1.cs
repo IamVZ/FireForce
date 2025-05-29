@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryUserControl;
 using NewMission;
 
 namespace caserneWAVZ
@@ -15,6 +16,7 @@ namespace caserneWAVZ
     public partial class Form1 : Form
     {
         private LibraryUserControl.TableauDeBord tableauDeBord;
+        private ucStatistique Statistique;
         private ucNewMission ucNM;
 
         public Form1()
@@ -273,5 +275,22 @@ namespace caserneWAVZ
         }
 
 
+
+
+        private void btnStatistique_Click(object sender, EventArgs e)
+        {
+            Statistique = new ucStatistique(Connexion.Connec);
+            Statistique.Location = new Point(330, 12);
+
+            this.Controls.Add(Statistique);
+            Statistique.ChargerHabilitation();
+            Statistique.ChargerCaserne();
+            Statistique.ChargerEnginPlusUtilise();
+            Statistique.EnginParHeureUtil();
+            Statistique.ChargerNombreIntervention();
+            Statistique.ChargerHabilitationLaPlusSolicite();
+            
+            Statistique.ChargerPompierParHabilitation();
+        }
     }
 }

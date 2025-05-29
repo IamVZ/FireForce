@@ -14,8 +14,15 @@ using iTextSharp.text.pdf;
 
 namespace LibraryUserControl
 {
+
     public partial class TableauDeBord : UserControl
     {
+
+
+
+
+
+
 
         //Tout les delegates nécessaire que ça soit pour terminer la mission, ou remplir les infos selon si EnCours checked (comme ça je m'entraine sur les delegate).
         public delegate string[] DelegateObtenirInfosMission(int idMission);
@@ -41,27 +48,32 @@ namespace LibraryUserControl
         {
             InitializeComponent();
             dataSet = ds;
+
         }
 
         public void InitialiserCasesAvecMissions(List<int> idMissions)
         {
-            //Initialiser toutes les missions avec chacune une case
+            // Initialiser toutes les missions avec chacune une case
             pnlMission.Controls.Clear();
-            //Position de départ
-            int x = 100;
+
+            // Suspend la mise en page pour éviter les refreshs multiples
+            pnlMission.SuspendLayout();
+
+            // Position de départ
+            int x = 200;
             int y = 20;
-            //Pour chaque id dans la liste
+            idMissions.Sort();        
+            idMissions.Reverse();      
+            // Pour chaque id dans la liste
             foreach (int id in idMissions)
             {
-                //Test pour voir si mon délégué était bien définis
                 if (GetMissionInfos == null)
                     throw new InvalidOperationException("eeee probleme de délégué la nan ?.");
-                //Le delegate s'occupera de ramener les infos ici dans un tableau
+
                 string[] infos = GetMissionInfos(id);
-                //Si l'info est null on peut juste skip 
-                if (infos == null )
+                if (infos == null)
                     continue;
-                //Instanciation d'une case et des boutons ainsi que leur fonction associé    
+
                 ucTableauDeBordCase mission = new ucTableauDeBordCase();
                 mission.remplirLabel(infos[0], infos[1], infos[2], infos[3], infos[4]);
 
@@ -80,45 +92,74 @@ namespace LibraryUserControl
                     ExporterMissionEnPDF(mission);
                 };
 
-                Button boutonValider = new Button
+                bool missionTerminee = false;
+                DataRow row = dataSet.Tables["Mission"].Select($"id = {id}").FirstOrDefault();
+                if (Convert.ToInt32(row["terminee"]) == 1 )
                 {
-                    Size = new Size(150, 60),
-                    Text = "Terminer",
-                    Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold),
-                    BackColor = Color.FromArgb(0, 0, 107),
-                    ForeColor = Color.White,
-                    FlatStyle = FlatStyle.Flat,
-                    Cursor = Cursors.Hand
-                };
-                boutonValider.Click += (s, e) =>
+                    missionTerminee = true;
+                }
+                Button boutonAction;
+
+                if (missionTerminee)
                 {
-                    if (ValiderMission != null)
+                    boutonAction = new Button
                     {
-                        
-                        string idStr = mission.IDMission.Replace("ID mission : ", "");
-                        if (int.TryParse(idStr, out int idMission))
+                        Size = new Size(150, 60),
+                        Text = "Mission déjà terminée",
+                        Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold),
+                        BackColor = Color.Gray,
+                        ForeColor = Color.White,
+                        Enabled = false,
+                        FlatStyle = FlatStyle.Flat
+                    };
+                }
+                else 
+                {
+                    boutonAction = new Button
+                    {
+                        Size = new Size(150, 60),
+                        Text = "Terminer",
+                        Font = new System.Drawing.Font("Segoe UI", 10F, FontStyle.Bold),
+                        BackColor = Color.FromArgb(0, 0, 107),
+                        ForeColor = Color.White,
+                        FlatStyle = FlatStyle.Flat,
+                        Cursor = Cursors.Hand
+                    };
+                    boutonAction.Click += (s, e) =>
+                    {
+                        if (ValiderMission != null)
                         {
-                            ValiderMission(idMission);
+                            string idStr = mission.IDMission.Replace("ID mission : ", "");
+                            if (int.TryParse(idStr, out int idMission))
+                            {
+                                ValiderMission(idMission);
+                                chkEnCours_CheckedChanged(chkEnCours, EventArgs.Empty);
+                            }
                         }
-                    }
-                };
+                    };
+
+                }
+
+               
 
                 mission.ImageMission = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject("_" + infos[5]);
 
-
                 mission.Location = new Point(x, y);
                 boutonPDF.Location = new Point(x + mission.Width + 10, y);
-                boutonValider.Location = new Point(x + mission.Width + 10, y + boutonPDF.Height + 10);
+                boutonAction.Location = new Point(x + mission.Width + 10, y + boutonPDF.Height + 10);
 
                 pnlMission.Controls.Add(mission);
                 pnlMission.Controls.Add(boutonPDF);
-                pnlMission.Controls.Add(boutonValider);
+                pnlMission.Controls.Add(boutonAction);
 
-                y += Math.Max(mission.Height, boutonPDF.Height + boutonValider.Height) + 20;
+                y += Math.Max(mission.Height, boutonPDF.Height + boutonAction.Height) + 20;
             }
+
+            pnlMission.ResumeLayout();
 
             pnlMission.AutoScroll = true;
         }
+
 
         private void ExporterMissionEnPDF(ucTableauDeBordCase mission)
         {
@@ -322,14 +363,15 @@ namespace LibraryUserControl
                         Text = "Aucune mission en cours",
                         AutoSize = true,
                         Font = new System.Drawing.Font("Arial", 14, FontStyle.Bold),
-                        Location = new Point(150, 100),
-                        ForeColor = Color.DarkRed
+                        Location = new Point(pnlMission.Width/2, pnlMission.Height/2),
+                        ForeColor = Color.White
                     };
                     pnlMission.Controls.Add(lbl);
                 }
                 else
                 {
                     InitialiserCasesAvecMissions(missionsEnCours);
+               
                 }
             }
             else
