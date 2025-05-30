@@ -30,6 +30,10 @@ namespace LibraryUserControl
 
         private void ucGestionPersonnel_Load(object sender, EventArgs e)
         {
+            pnlCarriere.Visible = false;
+            pnlLogin.Visible = false;
+            btnDeconexion.Visible = false;
+
             // Initialisation de la datatable contenant tous les pompiers pouvant être sélectionné dans la cbo
             dtChoixPompier = new DataTable();
             dtChoixPompier.Columns.Add("nomPrenom", typeof(string));
@@ -46,7 +50,7 @@ namespace LibraryUserControl
             dtChoixPompier.Columns.Add("enConge", typeof(int));
             dtChoixPompier.Columns.Add("enMission", typeof(int));
 
-            dgv.DataSource = dtChoixPompier;
+            
             // Liaison entre dtChoixPompier et cboChoixPompier
             bsPompier = new BindingSource();
             bsPompier.DataSource = dtChoixPompier;
@@ -127,10 +131,6 @@ namespace LibraryUserControl
                     MessageBox.Show(err.Message);
                 }
             }
-            else
-            {
-                MessageBox.Show("cboChoixCaserne.SelectedValue = null");
-            }
         }
 
         private void cboChoixCaserne_SelectedValueChanged(object sender, EventArgs e)
@@ -149,10 +149,7 @@ namespace LibraryUserControl
 
         private void btnNouveauPompier_Click(object sender, EventArgs e)
         {
-            if (cboChoixPompier.SelectedValue != null)
-            {
-                MessageBox.Show(cboChoixPompier.SelectedValue.ToString());
-            }
+
         }
 
         private void btnChangerGrade_Click(object sender, EventArgs e)
@@ -172,6 +169,71 @@ namespace LibraryUserControl
             {
                 MessageBox.Show(err.Message);
             }
+        }
+
+        private void btnPlusInfo_Click(object sender, EventArgs e)
+        {
+            pnlLogin.Visible = true;
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            pnlLogin.Visible = false;
+            btnDeconexion.Visible = false;
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string requete = "select * from Admin";
+                SQLiteCommand cd = new SQLiteCommand(requete, connec);
+                SQLiteDataReader dr = cd.ExecuteReader();
+                bool mdpIsValid = false;
+                bool idIsValid = false;
+                while(dr.Read() && !mdpIsValid)
+                {
+                    if(txtId.Text == dr[1].ToString() && txtMdp.Text == dr[2].ToString())
+                    {
+                        mdpIsValid = true;
+                    }
+                    else if(txtId.Text == dr[1].ToString())
+                    {
+                        idIsValid = true;
+                    }
+                }
+                // traitement des résultats après parcours de la base
+                if (mdpIsValid)
+                {
+                    pnlLogin.Visible = false;
+                    pnlCarriere.Visible = true;
+                    btnPlusInfo.Visible = false;
+                    btnDeconexion.Visible = true;
+                }
+                else if(idIsValid)
+                {
+                    MessageBox.Show("Mot de passe incorrect");
+                    txtMdp.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Identifiant ou mot de passe incorrect");
+                    txtMdp.Text = "";
+                    txtId.Text = "";
+                }
+            }
+            catch(SystemException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void bntDeconexion_Click(object sender, EventArgs e)
+        {
+            pnlCarriere.Visible = false;
+            btnPlusInfo.Visible = true;
+            txtMdp.Text = "";
+            txtId.Text = "";
         }
     }
 }

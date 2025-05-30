@@ -53,9 +53,9 @@
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblMatricule = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCarriere = new System.Windows.Forms.Panel();
             this.chkCongee = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMettreAJour = new System.Windows.Forms.Button();
             this.lsbAffectationPassees = new System.Windows.Forms.ListBox();
             this.lsbHabilitation = new System.Windows.Forms.ListBox();
             this.cboAffectation = new System.Windows.Forms.ComboBox();
@@ -68,17 +68,33 @@
             this.cboChoixCaserne = new System.Windows.Forms.ComboBox();
             this.cboChoixPompier = new System.Windows.Forms.ComboBox();
             this.btnNouveauPompier = new System.Windows.Forms.Button();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.btnPlusInfo = new System.Windows.Forms.Button();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnRetour = new System.Windows.Forms.Button();
+            this.lblMdp = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtMdp = new System.Windows.Forms.TextBox();
+            this.btnValider = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblLoginTitre = new System.Windows.Forms.Label();
+            this.btnDeconexion = new System.Windows.Forms.Button();
             this.pnlTitre.SuspendLayout();
             this.pnlinfoPompier.SuspendLayout();
             this.grpCarriere.SuspendLayout();
+            this.pnlCarriere.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitre
             // 
             this.pnlTitre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlTitre.Controls.Add(this.btnDeconexion);
             this.pnlTitre.Controls.Add(this.lblTitre);
             this.pnlTitre.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.pnlTitre.Location = new System.Drawing.Point(0, 0);
@@ -237,7 +253,7 @@
             this.btnChangerGrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangerGrade.Location = new System.Drawing.Point(425, 42);
             this.btnChangerGrade.Name = "btnChangerGrade";
-            this.btnChangerGrade.Size = new System.Drawing.Size(130, 40);
+            this.btnChangerGrade.Size = new System.Drawing.Size(130, 45);
             this.btnChangerGrade.TabIndex = 4;
             this.btnChangerGrade.Text = "Changer";
             this.btnChangerGrade.UseVisualStyleBackColor = false;
@@ -355,22 +371,22 @@
             this.lblMatricule.TabIndex = 0;
             this.lblMatricule.Text = "Matricule";
             // 
-            // panel1
+            // pnlCarriere
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.chkCongee);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lsbAffectationPassees);
-            this.panel1.Controls.Add(this.lsbHabilitation);
-            this.panel1.Controls.Add(this.cboAffectation);
-            this.panel1.Controls.Add(this.lblAffectationPassees);
-            this.panel1.Controls.Add(this.lblHabilitation);
-            this.panel1.Controls.Add(this.lblAffectation);
-            this.panel1.Controls.Add(this.lblCarriere);
-            this.panel1.Location = new System.Drawing.Point(788, 340);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 580);
-            this.panel1.TabIndex = 8;
+            this.pnlCarriere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlCarriere.Controls.Add(this.chkCongee);
+            this.pnlCarriere.Controls.Add(this.btnMettreAJour);
+            this.pnlCarriere.Controls.Add(this.lsbAffectationPassees);
+            this.pnlCarriere.Controls.Add(this.lsbHabilitation);
+            this.pnlCarriere.Controls.Add(this.cboAffectation);
+            this.pnlCarriere.Controls.Add(this.lblAffectationPassees);
+            this.pnlCarriere.Controls.Add(this.lblHabilitation);
+            this.pnlCarriere.Controls.Add(this.lblAffectation);
+            this.pnlCarriere.Controls.Add(this.lblCarriere);
+            this.pnlCarriere.Location = new System.Drawing.Point(788, 340);
+            this.pnlCarriere.Name = "pnlCarriere";
+            this.pnlCarriere.Size = new System.Drawing.Size(718, 580);
+            this.pnlCarriere.TabIndex = 8;
             // 
             // chkCongee
             // 
@@ -385,18 +401,18 @@
             this.chkCongee.Text = ": En congé";
             this.chkCongee.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnMettreAJour
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(528, 506);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 58);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Mettre à jour";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnMettreAJour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMettreAJour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMettreAJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMettreAJour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnMettreAJour.Location = new System.Drawing.Point(528, 506);
+            this.btnMettreAJour.Name = "btnMettreAJour";
+            this.btnMettreAJour.Size = new System.Drawing.Size(174, 58);
+            this.btnMettreAJour.TabIndex = 7;
+            this.btnMettreAJour.Text = "Mettre à jour";
+            this.btnMettreAJour.UseVisualStyleBackColor = false;
             // 
             // lsbAffectationPassees
             // 
@@ -529,15 +545,153 @@
             this.btnNouveauPompier.UseVisualStyleBackColor = false;
             this.btnNouveauPompier.Click += new System.EventHandler(this.btnNouveauPompier_Click);
             // 
-            // dgv
+            // btnPlusInfo
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(855, 157);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersWidth = 51;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(378, 161);
-            this.dgv.TabIndex = 14;
+            this.btnPlusInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPlusInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlusInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlusInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnPlusInfo.Location = new System.Drawing.Point(788, 340);
+            this.btnPlusInfo.Name = "btnPlusInfo";
+            this.btnPlusInfo.Size = new System.Drawing.Size(264, 68);
+            this.btnPlusInfo.TabIndex = 15;
+            this.btnPlusInfo.Text = "Plus d\'information";
+            this.btnPlusInfo.UseVisualStyleBackColor = false;
+            this.btnPlusInfo.Click += new System.EventHandler(this.btnPlusInfo_Click);
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlLogin.Controls.Add(this.panel3);
+            this.pnlLogin.Controls.Add(this.panel2);
+            this.pnlLogin.Controls.Add(this.btnValider);
+            this.pnlLogin.Controls.Add(this.btnRetour);
+            this.pnlLogin.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(1530, 950);
+            this.pnlLogin.TabIndex = 16;
+            this.pnlLogin.Visible = false;
+            // 
+            // btnRetour
+            // 
+            this.btnRetour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnRetour.Location = new System.Drawing.Point(110, 835);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(203, 69);
+            this.btnRetour.TabIndex = 0;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = false;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
+            // lblMdp
+            // 
+            this.lblMdp.AutoSize = true;
+            this.lblMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblMdp.Location = new System.Drawing.Point(35, 308);
+            this.lblMdp.Name = "lblMdp";
+            this.lblMdp.Size = new System.Drawing.Size(270, 46);
+            this.lblMdp.TabIndex = 1;
+            this.lblMdp.Text = "Mot de passe ";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblId.Location = new System.Drawing.Point(33, 72);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(191, 46);
+            this.lblId.TabIndex = 2;
+            this.lblId.Text = "Identifiant";
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(41, 156);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(415, 53);
+            this.txtId.TabIndex = 3;
+            // 
+            // txtMdp
+            // 
+            this.txtMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMdp.Location = new System.Drawing.Point(41, 390);
+            this.txtMdp.Name = "txtMdp";
+            this.txtMdp.Size = new System.Drawing.Size(415, 53);
+            this.txtMdp.TabIndex = 4;
+            // 
+            // btnValider
+            // 
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnValider.Location = new System.Drawing.Point(1217, 835);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(203, 69);
+            this.btnValider.TabIndex = 5;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.txtMdp);
+            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.lblId);
+            this.panel1.Controls.Add(this.lblMdp);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(500, 514);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(522, 208);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(510, 524);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.lblLoginTitre);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1530, 133);
+            this.panel3.TabIndex = 8;
+            // 
+            // lblLoginTitre
+            // 
+            this.lblLoginTitre.AutoSize = true;
+            this.lblLoginTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblLoginTitre.Location = new System.Drawing.Point(610, 57);
+            this.lblLoginTitre.Name = "lblLoginTitre";
+            this.lblLoginTitre.Size = new System.Drawing.Size(309, 46);
+            this.lblLoginTitre.TabIndex = 5;
+            this.lblLoginTitre.Text = "Connectez-vous";
+            // 
+            // btnDeconexion
+            // 
+            this.btnDeconexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeconexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeconexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeconexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnDeconexion.Location = new System.Drawing.Point(1274, 39);
+            this.btnDeconexion.Name = "btnDeconexion";
+            this.btnDeconexion.Size = new System.Drawing.Size(232, 53);
+            this.btnDeconexion.TabIndex = 17;
+            this.btnDeconexion.Text = "Se Déconecter";
+            this.btnDeconexion.UseVisualStyleBackColor = false;
+            this.btnDeconexion.Click += new System.EventHandler(this.bntDeconexion_Click);
             // 
             // ucGestionPersonnel
             // 
@@ -545,13 +699,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibraryUserControl.Properties.Resources.fond1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.pnlLogin);
+            this.Controls.Add(this.btnPlusInfo);
             this.Controls.Add(this.btnNouveauPompier);
             this.Controls.Add(this.cboChoixPompier);
             this.Controls.Add(this.cboChoixCaserne);
             this.Controls.Add(this.lblChoixPompier);
             this.Controls.Add(this.lblChoixCaserne);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCarriere);
             this.Controls.Add(this.pnlinfoPompier);
             this.Controls.Add(this.pnlTitre);
             this.Name = "ucGestionPersonnel";
@@ -563,9 +718,14 @@
             this.pnlinfoPompier.PerformLayout();
             this.grpCarriere.ResumeLayout(false);
             this.grpCarriere.PerformLayout();
+            this.pnlCarriere.ResumeLayout(false);
+            this.pnlCarriere.PerformLayout();
+            this.pnlLogin.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,7 +749,7 @@
         private System.Windows.Forms.Label lblGrade;
         private System.Windows.Forms.ComboBox cboGrade;
         private System.Windows.Forms.Button btnChangerGrade;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCarriere;
         private System.Windows.Forms.Label lblAffectationPassees;
         private System.Windows.Forms.Label lblHabilitation;
         private System.Windows.Forms.Label lblAffectation;
@@ -602,9 +762,8 @@
         private System.Windows.Forms.ListBox lsbHabilitation;
         private System.Windows.Forms.ComboBox cboAffectation;
         private System.Windows.Forms.ListBox lsbAffectationPassees;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMettreAJour;
         private System.Windows.Forms.CheckBox chkCongee;
-        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -614,5 +773,18 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPlusInfo;
+        private System.Windows.Forms.Panel pnlLogin;
+        private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblMdp;
+        private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.TextBox txtMdp;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblLoginTitre;
+        private System.Windows.Forms.Button btnDeconexion;
     }
 }

@@ -34,12 +34,14 @@
             this.btnTab1 = new System.Windows.Forms.Button();
             this.btnNewMission = new System.Windows.Forms.Button();
             this.btnGestionPersonnel = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnQuitter);
             this.panel1.Controls.Add(this.btnGestionPersonnel);
             this.panel1.Controls.Add(this.btnEngin);
             this.panel1.Controls.Add(this.btnStatistique);
@@ -57,7 +59,7 @@
             this.btnEngin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEngin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEngin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnEngin.Location = new System.Drawing.Point(3, 212);
+            this.btnEngin.Location = new System.Drawing.Point(6, 160);
             this.btnEngin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEngin.Name = "btnEngin";
             this.btnEngin.Size = new System.Drawing.Size(344, 69);
@@ -70,15 +72,21 @@
             // 
             // btnStatistique
             // 
-            this.btnStatistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistique.Location = new System.Drawing.Point(78, 252);
+            this.btnStatistique.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnStatistique.FlatAppearance.BorderSize = 0;
+            this.btnStatistique.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistique.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnStatistique.Location = new System.Drawing.Point(6, 233);
             this.btnStatistique.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatistique.Name = "btnStatistique";
-            this.btnStatistique.Size = new System.Drawing.Size(231, 86);
+            this.btnStatistique.Size = new System.Drawing.Size(344, 69);
             this.btnStatistique.TabIndex = 3;
             this.btnStatistique.Text = "Statistique";
-            this.btnStatistique.UseVisualStyleBackColor = true;
+            this.btnStatistique.UseVisualStyleBackColor = false;
             this.btnStatistique.Click += new System.EventHandler(this.btnStatistique_Click);
+            this.btnStatistique.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnStatistique.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
             // btnTab1
             // 
@@ -88,7 +96,7 @@
             this.btnTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTab1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnTab1.Location = new System.Drawing.Point(3, 70);
+            this.btnTab1.Location = new System.Drawing.Point(3, 18);
             this.btnTab1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTab1.Name = "btnTab1";
             this.btnTab1.Size = new System.Drawing.Size(344, 65);
@@ -107,7 +115,7 @@
             this.btnNewMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnNewMission.Location = new System.Drawing.Point(3, 139);
+            this.btnNewMission.Location = new System.Drawing.Point(6, 87);
             this.btnNewMission.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewMission.Name = "btnNewMission";
             this.btnNewMission.Size = new System.Drawing.Size(344, 69);
@@ -125,7 +133,7 @@
             this.btnGestionPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionPersonnel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnGestionPersonnel.Location = new System.Drawing.Point(3, 441);
+            this.btnGestionPersonnel.Location = new System.Drawing.Point(0, 306);
             this.btnGestionPersonnel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGestionPersonnel.Name = "btnGestionPersonnel";
             this.btnGestionPersonnel.Size = new System.Drawing.Size(344, 69);
@@ -133,6 +141,26 @@
             this.btnGestionPersonnel.Text = "Gestion du personnel";
             this.btnGestionPersonnel.UseVisualStyleBackColor = false;
             this.btnGestionPersonnel.Click += new System.EventHandler(this.btnGestionPersonnel_Click);
+            this.btnGestionPersonnel.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnGestionPersonnel.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnQuitter.FlatAppearance.BorderSize = 0;
+            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnQuitter.Location = new System.Drawing.Point(3, 707);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(344, 69);
+            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            this.btnQuitter.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnQuitter.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
             // Form1
             // 
@@ -161,6 +189,7 @@
         private System.Windows.Forms.Button btnEngin;
         private System.Windows.Forms.Button btnStatistique;
         private System.Windows.Forms.Button btnGestionPersonnel;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }
 

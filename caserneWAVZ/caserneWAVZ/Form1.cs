@@ -35,7 +35,7 @@ namespace caserneWAVZ
         private void btnNewMission_Click(object sender, EventArgs e)
         {
             // Enlève de l'écran le tableau de bord si il est dejà présent
-            if(tableauDeBord != null)
+            if (tableauDeBord != null)
             {
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
@@ -47,6 +47,20 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucEngin);
                 ucEngin.Dispose();
                 ucEngin = null;
+            }
+            // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
+            if (ucPersonnel != null)
+            {
+                this.Controls.Remove(ucPersonnel);
+                ucPersonnel.Dispose();
+                ucPersonnel = null;
+            }
+            // Enlève de l'écran les statistiques si elles sont dejà présentent
+            if (Statistique != null)
+            {
+                this.Controls.Remove(Statistique);
+                Statistique.Dispose();
+                Statistique = null;
             }
 
 
@@ -232,7 +246,7 @@ namespace caserneWAVZ
         private void btnTab_Click_1(object sender, EventArgs e)
         {
             // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
-            if(ucNM != null)
+            if (ucNM != null)
             {
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
@@ -245,15 +259,22 @@ namespace caserneWAVZ
                 ucEngin.Dispose();
                 ucEngin = null;
             }
-
-            // Si le tableau de bord est déjà là, on ne fait rien
-            if (tableauDeBord != null)
+            // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
+            if (ucPersonnel != null)
             {
-                btnTab1.Enabled = false; // le désactiver pour montrer qu'on y est déjà
-                return;
+                this.Controls.Remove(ucPersonnel);
+                ucPersonnel.Dispose();
+                ucPersonnel = null;
+            }
+            // Enlève de l'écran les statistiques si elles sont dejà présentent
+            if (Statistique != null)
+            {
+                this.Controls.Remove(Statistique);
+                Statistique.Dispose();
+                Statistique = null;
             }
 
-                tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
+            tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
                 tableauDeBord.GetMissionInfos = ObtenirInfosMission;
                 tableauDeBord.ValiderMission = MarquerMissionTerminee;
                 tableauDeBord.GetMissionsEnCours = ObtenirMissionsEnCours;
@@ -297,6 +318,20 @@ namespace caserneWAVZ
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
             }
+            // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
+            if (ucPersonnel != null)
+            {
+                this.Controls.Remove(ucPersonnel);
+                ucPersonnel.Dispose();
+                ucPersonnel = null;
+            }
+            // Enlève de l'écran les statistiques si elles sont dejà présentent
+            if (Statistique != null)
+            {
+                this.Controls.Remove(Statistique);
+                Statistique.Dispose();
+                Statistique = null;
+            }
             ucEngin = new ucGestionEngin(MesDatas.DsGlobal)
             {
                 Location = new Point(330, 12)
@@ -321,6 +356,35 @@ namespace caserneWAVZ
 
         private void btnStatistique_Click(object sender, EventArgs e)
         {
+            // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
+            if (ucNM != null)
+            {
+                this.Controls.Remove(ucNM);
+                ucNM.Dispose();
+                ucNM = null;
+            }
+            // Enlève de l'écran le tableau de bord si il est dejà présent
+            if (tableauDeBord != null)
+            {
+                this.Controls.Remove(tableauDeBord);
+                tableauDeBord.Dispose();
+                tableauDeBord = null;
+            }
+            // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
+            if (ucEngin != null)
+            {
+                this.Controls.Remove(ucEngin);
+                ucEngin.Dispose();
+                ucEngin = null;
+            }
+            // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
+            if (ucPersonnel != null)
+            {
+                this.Controls.Remove(ucPersonnel);
+                ucPersonnel.Dispose();
+                ucPersonnel = null;
+            }
+
             Statistique = new ucStatistique(Connexion.Connec);
             Statistique.Location = new Point(330, 12);
 
@@ -337,12 +401,45 @@ namespace caserneWAVZ
 
         private void btnGestionPersonnel_Click(object sender, EventArgs e)
         {
+            // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
+            if (ucNM != null)
+            {
+                this.Controls.Remove(ucNM);
+                ucNM.Dispose();
+                ucNM = null;
+            }
+            // Enlève de l'écran le tableau de bord si il est dejà présent
+            if (tableauDeBord != null)
+            {
+                this.Controls.Remove(tableauDeBord);
+                tableauDeBord.Dispose();
+                tableauDeBord = null;
+            }
+            // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
+            if (ucEngin != null)
+            {
+                this.Controls.Remove(ucEngin);
+                ucEngin.Dispose();
+                ucEngin = null;
+            }
+            // Enlève de l'écran les statistiques si elles sont dejà présentent
+            if (Statistique != null)
+            {
+                this.Controls.Remove(Statistique);
+                Statistique.Dispose();
+                Statistique = null;
+            }
             ucPersonnel = new ucGestionPersonnel(Connexion.Connec, MesDatas.DsGlobal)
             {
                 Location = new Point(330, 12)
             };
 
             this.Controls.Add(ucPersonnel);
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
