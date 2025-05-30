@@ -55,6 +55,7 @@ namespace LibraryUserControl
             cboChoixPompier.ValueMember = "matricule";
             cboChoixPompier.DataSource = bsPompier;
 
+            // Liaison entre les labels et la base de donnée
             lblNom.DataBindings.Add("Text", bsPompier, "nom");
             lblPrenom.DataBindings.Add("Text", bsPompier, "prenom");
             lblSexe.DataBindings.Add("Text", bsPompier, "sexe");
@@ -76,11 +77,19 @@ namespace LibraryUserControl
                 cboChoixCaserne.ValueMember = "id";
                 cboChoixCaserne.DataSource = bsCaserne;
 
+                // Remplir la combobox du choix des grades
+                BindingSource bsGrade = new BindingSource();
+                bsGrade.DataSource = dsGlobal;
+                bsGrade.DataMember = "Grade";
+                cboGrade.DisplayMember = "libelle";
+                cboGrade.ValueMember = "code";
+                cboGrade.DataSource = bsGrade;
+
                 // Remplir la combobox du choix du pompier
-                RemplirCboPompier();
+                RemplirCboPompier(0);
             }
         }
-        private void RemplirCboPompier()
+        private void RemplirCboPompier(int index)
         {
             // Remplir la combobox du choix du pompier
             if(cboChoixCaserne.SelectedValue != null)
@@ -111,14 +120,12 @@ namespace LibraryUserControl
                         row["portable"] = dr[10].ToString();
                         dtChoixPompier.Rows.Add(row);
                     }
+                    cboChoixPompier.SelectedIndex = index;
                 }
                 catch (SQLiteException err)
                 {
                     MessageBox.Show(err.Message);
                 }
-
-
-
             }
             else
             {
@@ -130,7 +137,7 @@ namespace LibraryUserControl
         {
             if(dsGlobal != null)
             {
-                RemplirCboPompier();
+                RemplirCboPompier(0);
                 cboChoixPompier.Text = "Choisir un pompier";
             }
         }
@@ -145,6 +152,25 @@ namespace LibraryUserControl
             if (cboChoixPompier.SelectedValue != null)
             {
                 MessageBox.Show(cboChoixPompier.SelectedValue.ToString());
+            }
+        }
+
+        private void btnChangerGrade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string grade = cboGrade.SelectedValue.ToString();
+                int matricule = int.Parse(cboChoixPompier.SelectedValue.ToString());
+                string requete = "update Pompier\r\nset codeGrade = '"+grade+"'\r\nwhere matricule = " +matricule +";";
+                SQLiteCommand cd = new SQLiteCommand(requete, connec);
+                cd.ExecuteNonQuery();
+                MessageBox.Show("Mise à jour avec succès !\n" + cboChoixPompier.Text + " est désormais --> " + grade);
+                int index = cboChoixPompier.SelectedIndex;
+                RemplirCboPompier(index);
+            }
+            catch (SQLiteException err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
     }

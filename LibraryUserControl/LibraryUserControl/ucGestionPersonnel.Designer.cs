@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grpCarriere = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnChangerGrade = new System.Windows.Forms.Button();
             this.cboGrade = new System.Windows.Forms.ComboBox();
             this.lblBip = new System.Windows.Forms.Label();
@@ -66,9 +69,6 @@
             this.cboChoixPompier = new System.Windows.Forms.ComboBox();
             this.btnNouveauPompier = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.pnlTitre.SuspendLayout();
             this.pnlinfoPompier.SuspendLayout();
             this.grpCarriere.SuspendLayout();
@@ -204,6 +204,33 @@
             this.grpCarriere.TabStop = false;
             this.grpCarriere.Text = "Carrière";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 29);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Téléphone :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(408, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 29);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "BIP :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 29);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Grade : ";
+            // 
             // btnChangerGrade
             // 
             this.btnChangerGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -214,6 +241,7 @@
             this.btnChangerGrade.TabIndex = 4;
             this.btnChangerGrade.Text = "Changer";
             this.btnChangerGrade.UseVisualStyleBackColor = false;
+            this.btnChangerGrade.Click += new System.EventHandler(this.btnChangerGrade_Click);
             // 
             // cboGrade
             // 
@@ -510,33 +538,6 @@
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(378, 161);
             this.dgv.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 29);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Grade : ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(408, 131);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 29);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "BIP :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 29);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Téléphone :";
             // 
             // ucGestionPersonnel
             // 
