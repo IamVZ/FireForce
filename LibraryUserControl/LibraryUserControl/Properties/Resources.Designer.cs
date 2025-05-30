@@ -273,9 +273,14 @@ namespace LibraryUserControl.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VSS {
-            get {
+        internal static System.Drawing.Bitmap VSS
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("VSS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         internal static System.Drawing.Bitmap pompier {
             get {
                 object obj = ResourceManager.GetObject("pompier", resourceCulture);

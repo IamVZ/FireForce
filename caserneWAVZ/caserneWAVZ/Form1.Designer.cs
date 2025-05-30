@@ -30,15 +30,17 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEngin = new System.Windows.Forms.Button();
+            this.btnStatistique = new System.Windows.Forms.Button();
             this.btnTab1 = new System.Windows.Forms.Button();
             this.btnNewMission = new System.Windows.Forms.Button();
-            this.btnStatistique = new System.Windows.Forms.Button();
+            this.btnGestionPersonnel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnGestionPersonnel);
             this.panel1.Controls.Add(this.btnEngin);
             this.panel1.Controls.Add(this.btnStatistique);
             this.panel1.Controls.Add(this.btnTab1);
@@ -65,16 +67,21 @@
             this.btnEngin.Click += new System.EventHandler(this.btnEngin_Click);
             this.btnEngin.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
             this.btnEngin.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
-            //
+            // 
+            // btnStatistique
+            // 
+            this.btnStatistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistique.Location = new System.Drawing.Point(78, 252);
+            this.btnStatistique.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStatistique.Name = "btnStatistique";
+            this.btnStatistique.Size = new System.Drawing.Size(231, 86);
+            this.btnStatistique.TabIndex = 3;
+            this.btnStatistique.Text = "Statistique";
+            this.btnStatistique.UseVisualStyleBackColor = true;
+            this.btnStatistique.Click += new System.EventHandler(this.btnStatistique_Click);
+            // 
             // btnTab1
             // 
-            this.btnTab1.Location = new System.Drawing.Point(78, 36);
-            this.btnTab1.Name = "btnTab1";
-            this.btnTab1.Size = new System.Drawing.Size(231, 81);
-            this.btnTab1.TabIndex = 1;
-            this.btnTab1.Text = "Tableau de bor";
-            this.btnTab1.UseVisualStyleBackColor = true;
-            this.btnTab1.Click += new System.EventHandler(this.btnTab_Click_1);
             this.btnTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnTab1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnTab1.FlatAppearance.BorderSize = 0;
@@ -111,17 +118,21 @@
             this.btnNewMission.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
             this.btnNewMission.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
-            // btnStatistique
+            // btnGestionPersonnel
             // 
-            this.btnStatistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistique.Location = new System.Drawing.Point(78, 252);
-            this.btnStatistique.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStatistique.Name = "btnStatistique";
-            this.btnStatistique.Size = new System.Drawing.Size(231, 86);
-            this.btnStatistique.TabIndex = 3;
-            this.btnStatistique.Text = "Statistique";
-            this.btnStatistique.UseVisualStyleBackColor = true;
-            this.btnStatistique.Click += new System.EventHandler(this.btnStatistique_Click);
+            this.btnGestionPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGestionPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnGestionPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionPersonnel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGestionPersonnel.Location = new System.Drawing.Point(3, 441);
+            this.btnGestionPersonnel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestionPersonnel.Name = "btnGestionPersonnel";
+            this.btnGestionPersonnel.Size = new System.Drawing.Size(344, 69);
+            this.btnGestionPersonnel.TabIndex = 4;
+            this.btnGestionPersonnel.Text = "Gestion du personnel";
+            this.btnGestionPersonnel.UseVisualStyleBackColor = false;
+            this.btnGestionPersonnel.Click += new System.EventHandler(this.btnGestionPersonnel_Click);
             // 
             // Form1
             // 
@@ -149,6 +160,7 @@
         private System.Windows.Forms.Button btnTab1;
         private System.Windows.Forms.Button btnEngin;
         private System.Windows.Forms.Button btnStatistique;
+        private System.Windows.Forms.Button btnGestionPersonnel;
     }
 }
 

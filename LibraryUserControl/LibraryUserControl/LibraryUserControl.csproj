@@ -76,6 +76,12 @@
     <Compile Include="ucGestionEngin.Designer.cs">
       <DependentUpon>ucGestionEngin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucGestionPersonnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGestionPersonnel.Designer.cs">
+      <DependentUpon>ucGestionPersonnel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucNewMission.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucGestionEngin.resx">
       <DependentUpon>ucGestionEngin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGestionPersonnel.resx">
+      <DependentUpon>ucGestionPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucNewMission.resx">
       <DependentUpon>ucNewMission.cs</DependentUpon>

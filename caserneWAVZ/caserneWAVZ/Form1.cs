@@ -19,6 +19,7 @@ namespace caserneWAVZ
         private ucStatistique Statistique;
         private ucNewMission ucNM;
         private ucGestionEngin ucEngin;
+        private ucGestionPersonnel ucPersonnel;
 
         public Form1()
         {
@@ -332,6 +333,16 @@ namespace caserneWAVZ
             Statistique.ChargerHabilitationLaPlusSolicite();
             
             Statistique.ChargerPompierParHabilitation();
+        }
+
+        private void btnGestionPersonnel_Click(object sender, EventArgs e)
+        {
+            ucPersonnel = new ucGestionPersonnel(Connexion.Connec, MesDatas.DsGlobal)
+            {
+                Location = new Point(330, 12)
+            };
+
+            this.Controls.Add(ucPersonnel);
         }
     }
 }

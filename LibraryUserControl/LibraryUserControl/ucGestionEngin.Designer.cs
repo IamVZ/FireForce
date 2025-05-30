@@ -216,11 +216,11 @@
             // lblCompteur
             // 
             this.lblCompteur.AutoSize = true;
-            this.lblCompteur.BackColor = System.Drawing.Color.Maroon;
-            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompteur.Location = new System.Drawing.Point(682, 865);
+            this.lblCompteur.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompteur.Location = new System.Drawing.Point(678, 856);
             this.lblCompteur.Name = "lblCompteur";
-            this.lblCompteur.Size = new System.Drawing.Size(23, 36);
+            this.lblCompteur.Size = new System.Drawing.Size(36, 54);
             this.lblCompteur.TabIndex = 15;
             this.lblCompteur.Text = "/";
             // 
