@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryUserControl;
 using NewMission;
 
 namespace caserneWAVZ
@@ -16,6 +17,7 @@ namespace caserneWAVZ
     {
         private LibraryUserControl.TableauDeBord tableauDeBord;
         private ucNewMission ucNM;
+        private ucGestionEngin ucEngin;
 
         public Form1()
         {
@@ -30,21 +32,26 @@ namespace caserneWAVZ
 
         private void btnNewMission_Click(object sender, EventArgs e)
         {
-
+            // Enlève de l'écran le tableau de bord si il est dejà présent
+            if(tableauDeBord != null)
+            {
+                this.Controls.Remove(tableauDeBord);
+                tableauDeBord.Dispose();
+                tableauDeBord = null;
+            }
+            // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
+            if (ucEngin != null)
+            {
+                this.Controls.Remove(ucEngin);
+                ucEngin.Dispose();
+                ucEngin = null;
+            }
 
 
             ucNM = new ucNewMission(MesDatas.DsGlobal);
             ucNM.Location = new Point(330, 12);
          
             this.Controls.Add(ucNM);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            this.Controls.Remove(ucNM);
-            ucNM.Dispose();
-            ucNM = null;
         }
 
         public string[] ObtenirInfosMission(int idMission)
@@ -220,29 +227,29 @@ namespace caserneWAVZ
             return ids;
         }
 
-
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            /*
-            DataRow[] dr = MesDatas.DsGlobal.Tables["Mission"].Select("idMission = 9");
-            DataTable dt = MesDatas.DsGlobal.Tables["Mission"].Clone();
-            foreach(DataRow d in dr)
-            {
-                dt.ImportRow(d);
-            }
-            dgvTest.DataSource = dt; */
-
-        }
-
         private void btnTab_Click_1(object sender, EventArgs e)
         {
+            // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
+            if(ucNM != null)
+            {
+                this.Controls.Remove(ucNM);
+                ucNM.Dispose();
+                ucNM = null;
+            }
+            // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
+            if (ucEngin != null)
+            {
+                this.Controls.Remove(ucEngin);
+                ucEngin.Dispose();
+                ucEngin = null;
+            }
+
             // Si le tableau de bord est déjà là, on ne fait rien
             if (tableauDeBord != null)
             {
                 btnTab1.Enabled = false; // le désactiver pour montrer qu'on y est déjà
                 return;
             }
-
 
                 tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
                 tableauDeBord.GetMissionInfos = ObtenirInfosMission;
@@ -272,6 +279,45 @@ namespace caserneWAVZ
 
         }
 
+        private void btnEngin_Click(object sender, EventArgs e)
+        {
+            // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
+            if (ucNM != null)
+            {
+                this.Controls.Remove(ucNM);
+                ucNM.Dispose();
+                ucNM = null;
+            }
+            // Enlève de l'écran le tableau de bord si il est dejà présent
+            if (tableauDeBord != null)
+            {
+                this.Controls.Remove(tableauDeBord);
+                tableauDeBord.Dispose();
+                tableauDeBord = null;
+            }
 
+
+            ucEngin = new ucGestionEngin(MesDatas.DsGlobal)
+            {
+                Location = new Point(330, 12)
+            };
+
+            this.Controls.Add(ucEngin);
+        }
+
+        private void btnTab1_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(50, 0, 0);
+            btn.Font = new Font(btn.Font.FontFamily, 18, btn.Font.Style);
+        }
+
+        private void btnTab1_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(90, 0, 0);
+            btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+
+        }
     }
 }

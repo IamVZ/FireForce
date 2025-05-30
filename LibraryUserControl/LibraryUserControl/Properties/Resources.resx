@@ -154,4 +154,34 @@
   <data name="_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FPT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\FPT.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BRS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\BRS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CCF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\CCF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EPA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\EPA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCYN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\FCYN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\VID.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VPC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\VPC.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\VSAV.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\VSR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\VSS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

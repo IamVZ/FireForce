@@ -73,7 +73,7 @@
             this.grpInfoUsage.Controls.Add(this.txtCP);
             this.grpInfoUsage.Controls.Add(this.txtRue);
             this.grpInfoUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpInfoUsage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.grpInfoUsage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpInfoUsage.Location = new System.Drawing.Point(200, 144);
             this.grpInfoUsage.Name = "grpInfoUsage";
             this.grpInfoUsage.Size = new System.Drawing.Size(1105, 256);
@@ -165,7 +165,7 @@
             this.grpRegulateur.Controls.Add(this.label2);
             this.grpRegulateur.Controls.Add(this.lblNatureSinistre);
             this.grpRegulateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRegulateur.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.grpRegulateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpRegulateur.Location = new System.Drawing.Point(200, 426);
             this.grpRegulateur.Name = "grpRegulateur";
             this.grpRegulateur.Size = new System.Drawing.Size(1104, 139);
@@ -194,7 +194,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(523, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 29);
@@ -218,7 +218,7 @@
             this.grpMobilisationPompier.Controls.Add(this.label4);
             this.grpMobilisationPompier.Controls.Add(this.lblEnginMobiliser);
             this.grpMobilisationPompier.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpMobilisationPompier.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.grpMobilisationPompier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.grpMobilisationPompier.Location = new System.Drawing.Point(200, 590);
             this.grpMobilisationPompier.Name = "grpMobilisationPompier";
             this.grpMobilisationPompier.Size = new System.Drawing.Size(1103, 263);
@@ -228,6 +228,7 @@
             // 
             // dgvPompierMobilisee
             // 
+            this.dgvPompierMobilisee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dgvPompierMobilisee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPompierMobilisee.Location = new System.Drawing.Point(479, 91);
             this.dgvPompierMobilisee.Name = "dgvPompierMobilisee";
@@ -238,6 +239,7 @@
             // 
             // dgvEngin
             // 
+            this.dgvEngin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dgvEngin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEngin.Location = new System.Drawing.Point(12, 91);
             this.dgvEngin.Name = "dgvEngin";
@@ -268,11 +270,11 @@
             // 
             this.lblNumMission.AutoSize = true;
             this.lblNumMission.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumMission.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNumMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblNumMission.Location = new System.Drawing.Point(35, 30);
             this.lblNumMission.Name = "lblNumMission";
-            this.lblNumMission.Size = new System.Drawing.Size(118, 25);
+            this.lblNumMission.Size = new System.Drawing.Size(166, 32);
             this.lblNumMission.TabIndex = 3;
             this.lblNumMission.Text = "Mission n°   ";
             // 
@@ -280,34 +282,36 @@
             // 
             this.lblDateMission.AutoSize = true;
             this.lblDateMission.BackColor = System.Drawing.Color.Transparent;
-            this.lblDateMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateMission.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDateMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblDateMission.Location = new System.Drawing.Point(1154, 30);
             this.lblDateMission.Name = "lblDateMission";
-            this.lblDateMission.Size = new System.Drawing.Size(149, 25);
+            this.lblDateMission.Size = new System.Drawing.Size(213, 32);
             this.lblDateMission.TabIndex = 4;
             this.lblDateMission.Text = "déclenchée le : ";
             // 
             // btnValide
             // 
+            this.btnValide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnValide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValide.Location = new System.Drawing.Point(1177, 880);
             this.btnValide.Name = "btnValide";
             this.btnValide.Size = new System.Drawing.Size(128, 56);
             this.btnValide.TabIndex = 5;
             this.btnValide.Text = "valider";
-            this.btnValide.UseVisualStyleBackColor = true;
+            this.btnValide.UseVisualStyleBackColor = false;
             this.btnValide.Click += new System.EventHandler(this.btnValide_Click);
             // 
             // btnConsulter
             // 
+            this.btnConsulter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnConsulter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulter.Location = new System.Drawing.Point(1015, 880);
             this.btnConsulter.Name = "btnConsulter";
             this.btnConsulter.Size = new System.Drawing.Size(128, 56);
             this.btnConsulter.TabIndex = 6;
             this.btnConsulter.Text = "consulter";
-            this.btnConsulter.UseVisualStyleBackColor = true;
+            this.btnConsulter.UseVisualStyleBackColor = false;
             this.btnConsulter.Click += new System.EventHandler(this.btnConsulter_Click);
             // 
             // lblTitre
@@ -315,7 +319,7 @@
             this.lblTitre.AutoSize = true;
             this.lblTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lblTitre.Location = new System.Drawing.Point(582, 51);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(350, 51);

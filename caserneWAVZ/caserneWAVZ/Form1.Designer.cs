@@ -29,83 +29,89 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnNewMission = new System.Windows.Forms.Button();
+            this.btnEngin = new System.Windows.Forms.Button();
             this.btnTab1 = new System.Windows.Forms.Button();
+            this.btnNewMission = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnEngin);
             this.panel1.Controls.Add(this.btnTab1);
-            this.panel1.Controls.Add(this.btnTest);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnNewMission);
-            this.panel1.Location = new System.Drawing.Point(14, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 1188);
+            this.panel1.Size = new System.Drawing.Size(350, 950);
             this.panel1.TabIndex = 0;
             // 
-            // btnTest
+            // btnEngin
             // 
-            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.Location = new System.Drawing.Point(78, 375);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(231, 80);
-            this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "TEST la DB";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(78, 259);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 81);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnNewMission
-            // 
-            this.btnNewMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMission.Location = new System.Drawing.Point(78, 133);
-            this.btnNewMission.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNewMission.Name = "btnNewMission";
-            this.btnNewMission.Size = new System.Drawing.Size(231, 86);
-            this.btnNewMission.TabIndex = 0;
-            this.btnNewMission.Text = "Nouvelle Mission";
-            this.btnNewMission.UseVisualStyleBackColor = true;
-            this.btnNewMission.Click += new System.EventHandler(this.btnNewMission_Click);
+            this.btnEngin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEngin.FlatAppearance.BorderSize = 0;
+            this.btnEngin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEngin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEngin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnEngin.Location = new System.Drawing.Point(3, 212);
+            this.btnEngin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEngin.Name = "btnEngin";
+            this.btnEngin.Size = new System.Drawing.Size(344, 69);
+            this.btnEngin.TabIndex = 2;
+            this.btnEngin.Text = "Engin";
+            this.btnEngin.UseVisualStyleBackColor = false;
+            this.btnEngin.Click += new System.EventHandler(this.btnEngin_Click);
+            this.btnEngin.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnEngin.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
             // btnTab1
             // 
-            this.btnTab1.Location = new System.Drawing.Point(78, 36);
+            this.btnTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTab1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTab1.FlatAppearance.BorderSize = 0;
+            this.btnTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTab1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnTab1.Location = new System.Drawing.Point(3, 70);
+            this.btnTab1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTab1.Name = "btnTab1";
-            this.btnTab1.Size = new System.Drawing.Size(231, 81);
+            this.btnTab1.Size = new System.Drawing.Size(344, 65);
             this.btnTab1.TabIndex = 1;
-            this.btnTab1.Text = "Tableau de bor";
-            this.btnTab1.UseVisualStyleBackColor = true;
+            this.btnTab1.Text = "Tableau de bord";
+            this.btnTab1.UseVisualStyleBackColor = false;
             this.btnTab1.Click += new System.EventHandler(this.btnTab_Click_1);
+            this.btnTab1.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnTab1.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
+            // 
+            // btnNewMission
+            // 
+            this.btnNewMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnNewMission.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnNewMission.FlatAppearance.BorderSize = 0;
+            this.btnNewMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnNewMission.Location = new System.Drawing.Point(3, 139);
+            this.btnNewMission.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNewMission.Name = "btnNewMission";
+            this.btnNewMission.Size = new System.Drawing.Size(344, 69);
+            this.btnNewMission.TabIndex = 0;
+            this.btnNewMission.Text = "Nouvelle Mission";
+            this.btnNewMission.UseVisualStyleBackColor = false;
+            this.btnNewMission.Click += new System.EventHandler(this.btnNewMission_Click);
+            this.btnNewMission.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnNewMission.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::caserneWAVZ.Properties.Resources.fond2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2164, 999);
+            this.ClientSize = new System.Drawing.Size(1710, 799);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -119,9 +125,8 @@
         private System.Windows.Forms.Panel panel1;
 
         private System.Windows.Forms.Button btnNewMission;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnTab1;
+        private System.Windows.Forms.Button btnEngin;
     }
 }
 
