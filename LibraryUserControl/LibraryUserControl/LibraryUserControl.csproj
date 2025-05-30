@@ -58,6 +58,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Statistique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistique.Designer.cs">
+      <DependentUpon>Statistique.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableauDeBord.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Statistique.resx">
+      <DependentUpon>Statistique.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TableauDeBord.resx">
       <DependentUpon>TableauDeBord.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\VSS.jpg" />
+    <None Include="Resources\pompier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

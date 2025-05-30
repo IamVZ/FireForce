@@ -16,6 +16,7 @@ namespace caserneWAVZ
     public partial class Form1 : Form
     {
         private LibraryUserControl.TableauDeBord tableauDeBord;
+        private ucStatistique Statistique;
         private ucNewMission ucNM;
         private ucGestionEngin ucEngin;
 
@@ -295,8 +296,6 @@ namespace caserneWAVZ
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
             }
-
-
             ucEngin = new ucGestionEngin(MesDatas.DsGlobal)
             {
                 Location = new Point(330, 12)
@@ -317,7 +316,22 @@ namespace caserneWAVZ
             Button btn = (Button)sender;
             btn.BackColor = Color.FromArgb(90, 0, 0);
             btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+        }
 
+        private void btnStatistique_Click(object sender, EventArgs e)
+        {
+            Statistique = new ucStatistique(Connexion.Connec);
+            Statistique.Location = new Point(330, 12);
+
+            this.Controls.Add(Statistique);
+            Statistique.ChargerHabilitation();
+            Statistique.ChargerCaserne();
+            Statistique.ChargerEnginPlusUtilise();
+            Statistique.EnginParHeureUtil();
+            Statistique.ChargerNombreIntervention();
+            Statistique.ChargerHabilitationLaPlusSolicite();
+            
+            Statistique.ChargerPompierParHabilitation();
         }
     }
 }

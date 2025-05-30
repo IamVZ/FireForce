@@ -276,6 +276,9 @@ namespace LibraryUserControl.Properties {
         internal static System.Drawing.Bitmap VSS {
             get {
                 object obj = ResourceManager.GetObject("VSS", resourceCulture);
+        internal static System.Drawing.Bitmap pompier {
+            get {
+                object obj = ResourceManager.GetObject("pompier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
