@@ -347,6 +347,7 @@ namespace LibraryUserControl
         {
             if (chkEnCours.Checked)
             {
+                chkEnCours.BackColor = Color.FromArgb(50, 0, 0);
                 if (GetMissionsEnCours == null)
                 {
                     MessageBox.Show("Le délégué pour obtenir les missions en cours n'est pas défini.");
@@ -376,6 +377,8 @@ namespace LibraryUserControl
             }
             else
             {
+                chkEnCours.BackColor = Color.FromArgb(80, 0, 0);
+
                 // hmmm faudrait la logique pour tt recharger ducoup la
                 List<int> TouteLesMissions = GetAllMission();
                 InitialiserCasesAvecMissions(TouteLesMissions);
@@ -384,6 +387,11 @@ namespace LibraryUserControl
 
 
         private void chkEnCours_CheckStateChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableauDeBord_Load(object sender, EventArgs e)
         {
 
         }

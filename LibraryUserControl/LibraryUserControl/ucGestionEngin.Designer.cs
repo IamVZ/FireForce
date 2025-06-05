@@ -44,8 +44,12 @@
             this.btnDernier = new System.Windows.Forms.Button();
             this.btnPremier = new System.Windows.Forms.Button();
             this.lblCompteur = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgEngin)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -74,7 +78,7 @@
             this.lblChoixCaserne.AutoSize = true;
             this.lblChoixCaserne.BackColor = System.Drawing.Color.Transparent;
             this.lblChoixCaserne.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoixCaserne.Location = new System.Drawing.Point(47, 184);
+            this.lblChoixCaserne.Location = new System.Drawing.Point(22, 37);
             this.lblChoixCaserne.Name = "lblChoixCaserne";
             this.lblChoixCaserne.Size = new System.Drawing.Size(271, 36);
             this.lblChoixCaserne.TabIndex = 2;
@@ -84,11 +88,10 @@
             // 
             this.cboChoixCaserne.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChoixCaserne.FormattingEnabled = true;
-            this.cboChoixCaserne.Location = new System.Drawing.Point(350, 176);
+            this.cboChoixCaserne.Location = new System.Drawing.Point(325, 29);
             this.cboChoixCaserne.Name = "cboChoixCaserne";
             this.cboChoixCaserne.Size = new System.Drawing.Size(354, 44);
             this.cboChoixCaserne.TabIndex = 3;
-            this.cboChoixCaserne.SelectedIndexChanged += new System.EventHandler(this.cboChoixCaserne_SelectedIndexChanged);
             this.cboChoixCaserne.SelectedValueChanged += new System.EventHandler(this.cboChoixCaserne_SelectedValueChanged);
             // 
             // lblNumero
@@ -96,7 +99,7 @@
             this.lblNumero.AutoSize = true;
             this.lblNumero.BackColor = System.Drawing.Color.Transparent;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(862, 184);
+            this.lblNumero.Location = new System.Drawing.Point(32, 57);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(144, 36);
             this.lblNumero.TabIndex = 4;
@@ -107,7 +110,7 @@
             this.lblDateRecep.AutoSize = true;
             this.lblDateRecep.BackColor = System.Drawing.Color.Transparent;
             this.lblDateRecep.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateRecep.Location = new System.Drawing.Point(1188, 346);
+            this.lblDateRecep.Location = new System.Drawing.Point(32, 293);
             this.lblDateRecep.Name = "lblDateRecep";
             this.lblDateRecep.Size = new System.Drawing.Size(272, 36);
             this.lblDateRecep.TabIndex = 5;
@@ -118,7 +121,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(102, 346);
+            this.lblStatus.Location = new System.Drawing.Point(32, 183);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(123, 36);
             this.lblStatus.TabIndex = 6;
@@ -129,7 +132,7 @@
             this.lblNum.AutoSize = true;
             this.lblNum.BackColor = System.Drawing.Color.Transparent;
             this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(1060, 184);
+            this.lblNum.Location = new System.Drawing.Point(194, 57);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(72, 36);
             this.lblNum.TabIndex = 7;
@@ -140,7 +143,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(1273, 408);
+            this.lblDate.Location = new System.Drawing.Point(32, 339);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(84, 36);
             this.lblDate.TabIndex = 8;
@@ -151,7 +154,7 @@
             this.lblStat.AutoSize = true;
             this.lblStat.BackColor = System.Drawing.Color.Transparent;
             this.lblStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStat.Location = new System.Drawing.Point(102, 408);
+            this.lblStat.Location = new System.Drawing.Point(194, 183);
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(107, 36);
             this.lblStat.TabIndex = 9;
@@ -168,6 +171,8 @@
             this.btnGauche.Text = "<";
             this.btnGauche.UseVisualStyleBackColor = false;
             this.btnGauche.Click += new System.EventHandler(this.btnGauche_Click);
+            this.btnGauche.MouseEnter += new System.EventHandler(this.btnPremier_MouseEnter);
+            this.btnGauche.MouseLeave += new System.EventHandler(this.btnPremier_MouseLeave);
             // 
             // btnDroit
             // 
@@ -180,10 +185,12 @@
             this.btnDroit.Text = ">";
             this.btnDroit.UseVisualStyleBackColor = false;
             this.btnDroit.Click += new System.EventHandler(this.btnDroit_Click);
+            this.btnDroit.MouseEnter += new System.EventHandler(this.btnPremier_MouseEnter);
+            this.btnDroit.MouseLeave += new System.EventHandler(this.btnPremier_MouseLeave);
             // 
             // pbImgEngin
             // 
-            this.pbImgEngin.Location = new System.Drawing.Point(350, 335);
+            this.pbImgEngin.Location = new System.Drawing.Point(643, 314);
             this.pbImgEngin.Name = "pbImgEngin";
             this.pbImgEngin.Size = new System.Drawing.Size(770, 460);
             this.pbImgEngin.TabIndex = 12;
@@ -200,6 +207,8 @@
             this.btnDernier.Text = ">>";
             this.btnDernier.UseVisualStyleBackColor = false;
             this.btnDernier.Click += new System.EventHandler(this.btnDernier_Click);
+            this.btnDernier.MouseEnter += new System.EventHandler(this.btnPremier_MouseEnter);
+            this.btnDernier.MouseLeave += new System.EventHandler(this.btnPremier_MouseLeave);
             // 
             // btnPremier
             // 
@@ -212,6 +221,8 @@
             this.btnPremier.Text = "<<";
             this.btnPremier.UseVisualStyleBackColor = false;
             this.btnPremier.Click += new System.EventHandler(this.btnPremier_Click);
+            this.btnPremier.MouseEnter += new System.EventHandler(this.btnPremier_MouseEnter);
+            this.btnPremier.MouseLeave += new System.EventHandler(this.btnPremier_MouseLeave);
             // 
             // lblCompteur
             // 
@@ -224,26 +235,44 @@
             this.lblCompteur.TabIndex = 15;
             this.lblCompteur.Text = "/";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.lblStat);
+            this.panel1.Controls.Add(this.lblDate);
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Controls.Add(this.lblDateRecep);
+            this.panel1.Controls.Add(this.lblNumero);
+            this.panel1.Controls.Add(this.lblNum);
+            this.panel1.Location = new System.Drawing.Point(15, 314);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(476, 460);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.cboChoixCaserne);
+            this.panel2.Controls.Add(this.lblChoixCaserne);
+            this.panel2.Location = new System.Drawing.Point(393, 159);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(706, 106);
+            this.panel2.TabIndex = 17;
+            // 
             // ucGestionEngin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibraryUserControl.Properties.Resources.fond1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblCompteur);
             this.Controls.Add(this.btnPremier);
             this.Controls.Add(this.btnDernier);
             this.Controls.Add(this.pbImgEngin);
             this.Controls.Add(this.btnDroit);
             this.Controls.Add(this.btnGauche);
-            this.Controls.Add(this.lblStat);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblNum);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblDateRecep);
-            this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.cboChoixCaserne);
-            this.Controls.Add(this.lblChoixCaserne);
             this.Controls.Add(this.pnlTitre);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Name = "ucGestionEngin";
@@ -252,6 +281,10 @@
             this.pnlTitre.ResumeLayout(false);
             this.pnlTitre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgEngin)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +308,7 @@
         private System.Windows.Forms.Button btnDernier;
         private System.Windows.Forms.Button btnPremier;
         private System.Windows.Forms.Label lblCompteur;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

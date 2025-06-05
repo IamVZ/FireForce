@@ -116,7 +116,7 @@ namespace LibraryUserControl
                     lbl.AutoSize = true;
                     lbl.Font = new Font("Segoe UI", 16, FontStyle.Bold);
                     lbl.ForeColor = Color.White;
-                    lbl.Location = new Point(x, y);
+                    lbl.Location = new Point(x+20, y);
 
                     pnlEnginplus.Controls.Add(lbl);
                     compteur++;
@@ -186,7 +186,7 @@ namespace LibraryUserControl
                     lbl.AutoSize = true;
                     lbl.Font = new Font("Segoe UI", 16, FontStyle.Bold);
                     lbl.ForeColor = Color.White;
-                    lbl.Location = new Point(x, y);
+                    lbl.Location = new Point(x+20, y);
 
                     pnlHeure.Controls.Add(lbl);
                     compteur++;
@@ -219,7 +219,7 @@ namespace LibraryUserControl
             SQLiteCommand cmd = new SQLiteCommand(req, connection);
             SQLiteDataReader reader = null;
             int x = 20;
-            int y = 0;
+            int y = 15;
             try 
             {
                 reader = cmd.ExecuteReader();
@@ -353,7 +353,7 @@ namespace LibraryUserControl
             SQLiteDataReader reader = null;
 
             int x = 20;
-            int y = 0;
+            int y = 20;
             bool found = false;
 
             try
@@ -444,6 +444,11 @@ namespace LibraryUserControl
         private void cbxHabilitation_SelectedValueChanged(object sender, EventArgs e)
         {
             ChargerPompierParHabilitation();
+        }
+
+        private void ucStatistique_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

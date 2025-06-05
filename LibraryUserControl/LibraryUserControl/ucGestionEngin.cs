@@ -68,6 +68,7 @@ namespace LibraryUserControl
                 imgEngin["VPC"] = Properties.Resources.VPC;
 
                 load = true;
+                ChargerElement();
 
             }
         }
@@ -88,11 +89,6 @@ namespace LibraryUserControl
                 bsEngin.MoveNext();
                 lblCompteur.Text = ((bsEngin.Position) + 1).ToString() + " / " + bsEngin.Count.ToString();
             }
-        }
-
-        private void cboChoixCaserne_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void cboChoixCaserne_SelectedValueChanged(object sender, EventArgs e)
@@ -142,6 +138,20 @@ namespace LibraryUserControl
         {
             bsEngin.MoveLast();
             lblCompteur.Text = ((bsEngin.Position)+1).ToString() + " / " + bsEngin.Count.ToString();
+        }
+
+        private void btnPremier_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(50, 0, 0);
+            btn.Font = new Font(btn.Font.FontFamily, 18, btn.Font.Style);
+        }
+
+        private void btnPremier_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.Maroon;
+            btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
         }
     }
 }

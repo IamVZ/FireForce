@@ -49,7 +49,7 @@ namespace NewMission
                 // Remplir la date de la mission ainsi que le numéro de la mission
                 numMission = dsMission.Tables["Mission"].Rows.Count + 1;
                 lblNumMission.Text = "Mission n° " + numMission.ToString();
-                dateHeure = DateTime.Now.ToString();
+                dateHeure = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 lblDateMission.Text = "Déclenchée le : " + dateHeure;
 
 

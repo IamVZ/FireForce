@@ -1,6 +1,6 @@
 ﻿namespace caserneWAVZ
 {
-    partial class Form1
+    partial class frmFireForce
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFireForce));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnQuitter = new System.Windows.Forms.Button();
+            this.btnGestionPersonnel = new System.Windows.Forms.Button();
             this.btnEngin = new System.Windows.Forms.Button();
             this.btnStatistique = new System.Windows.Forms.Button();
             this.btnTab1 = new System.Windows.Forms.Button();
             this.btnNewMission = new System.Windows.Forms.Button();
-            this.btnGestionPersonnel = new System.Windows.Forms.Button();
-            this.btnQuitter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.pbLogo);
             this.panel1.Controls.Add(this.btnQuitter);
             this.panel1.Controls.Add(this.btnGestionPersonnel);
             this.panel1.Controls.Add(this.btnEngin);
@@ -51,6 +55,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 950);
             this.panel1.TabIndex = 0;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pbLogo.Location = new System.Drawing.Point(-20, 450);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(400, 400);
+            this.pbLogo.TabIndex = 6;
+            this.pbLogo.TabStop = false;
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnQuitter.FlatAppearance.BorderSize = 0;
+            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnQuitter.Location = new System.Drawing.Point(3, 870);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(344, 69);
+            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = false;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            this.btnQuitter.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnQuitter.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
+            // 
+            // btnGestionPersonnel
+            // 
+            this.btnGestionPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGestionPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnGestionPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionPersonnel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGestionPersonnel.Location = new System.Drawing.Point(0, 306);
+            this.btnGestionPersonnel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestionPersonnel.Name = "btnGestionPersonnel";
+            this.btnGestionPersonnel.Size = new System.Drawing.Size(344, 69);
+            this.btnGestionPersonnel.TabIndex = 4;
+            this.btnGestionPersonnel.Text = "Gestion du personnel";
+            this.btnGestionPersonnel.UseVisualStyleBackColor = false;
+            this.btnGestionPersonnel.Click += new System.EventHandler(this.btnGestionPersonnel_Click);
+            this.btnGestionPersonnel.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
+            this.btnGestionPersonnel.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
             // btnEngin
             // 
@@ -126,43 +175,7 @@
             this.btnNewMission.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
             this.btnNewMission.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
             // 
-            // btnGestionPersonnel
-            // 
-            this.btnGestionPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnGestionPersonnel.FlatAppearance.BorderSize = 0;
-            this.btnGestionPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionPersonnel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnGestionPersonnel.Location = new System.Drawing.Point(0, 306);
-            this.btnGestionPersonnel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGestionPersonnel.Name = "btnGestionPersonnel";
-            this.btnGestionPersonnel.Size = new System.Drawing.Size(344, 69);
-            this.btnGestionPersonnel.TabIndex = 4;
-            this.btnGestionPersonnel.Text = "Gestion du personnel";
-            this.btnGestionPersonnel.UseVisualStyleBackColor = false;
-            this.btnGestionPersonnel.Click += new System.EventHandler(this.btnGestionPersonnel_Click);
-            this.btnGestionPersonnel.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
-            this.btnGestionPersonnel.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
-            // 
-            // btnQuitter
-            // 
-            this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnQuitter.FlatAppearance.BorderSize = 0;
-            this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnQuitter.Location = new System.Drawing.Point(3, 707);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(344, 69);
-            this.btnQuitter.TabIndex = 5;
-            this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = false;
-            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
-            this.btnQuitter.MouseEnter += new System.EventHandler(this.btnTab1_MouseEnter);
-            this.btnQuitter.MouseLeave += new System.EventHandler(this.btnTab1_MouseLeave);
-            // 
-            // Form1
+            // frmFireForce
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,10 +185,12 @@
             this.ClientSize = new System.Drawing.Size(1710, 799);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmFireForce";
+            this.Text = "FireForce";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +205,7 @@
         private System.Windows.Forms.Button btnStatistique;
         private System.Windows.Forms.Button btnGestionPersonnel;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }
 

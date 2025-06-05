@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInfoUsage = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMotif = new System.Windows.Forms.Label();
@@ -53,11 +58,13 @@
             this.btnValide = new System.Windows.Forms.Button();
             this.btnConsulter = new System.Windows.Forms.Button();
             this.lblTitre = new System.Windows.Forms.Label();
+            this.pnlTitre = new System.Windows.Forms.Panel();
             this.grpInfoUsage.SuspendLayout();
             this.grpRegulateur.SuspendLayout();
             this.grpMobilisationPompier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPompierMobilisee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEngin)).BeginInit();
+            this.pnlTitre.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfoUsage
@@ -228,10 +235,43 @@
             // 
             // dgvPompierMobilisee
             // 
-            this.dgvPompierMobilisee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvPompierMobilisee.AllowUserToAddRows = false;
+            this.dgvPompierMobilisee.AllowUserToDeleteRows = false;
+            this.dgvPompierMobilisee.AllowUserToResizeColumns = false;
+            this.dgvPompierMobilisee.AllowUserToResizeRows = false;
+            this.dgvPompierMobilisee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPompierMobilisee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgvPompierMobilisee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPompierMobilisee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPompierMobilisee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPompierMobilisee.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPompierMobilisee.EnableHeadersVisualStyles = false;
             this.dgvPompierMobilisee.Location = new System.Drawing.Point(479, 91);
             this.dgvPompierMobilisee.Name = "dgvPompierMobilisee";
+            this.dgvPompierMobilisee.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPompierMobilisee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPompierMobilisee.RowHeadersVisible = false;
             this.dgvPompierMobilisee.RowHeadersWidth = 51;
             this.dgvPompierMobilisee.RowTemplate.Height = 24;
             this.dgvPompierMobilisee.Size = new System.Drawing.Size(613, 156);
@@ -239,10 +279,36 @@
             // 
             // dgvEngin
             // 
-            this.dgvEngin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvEngin.AllowUserToAddRows = false;
+            this.dgvEngin.AllowUserToDeleteRows = false;
+            this.dgvEngin.AllowUserToOrderColumns = true;
+            this.dgvEngin.AllowUserToResizeColumns = false;
+            this.dgvEngin.AllowUserToResizeRows = false;
+            this.dgvEngin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEngin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgvEngin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEngin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEngin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEngin.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvEngin.EnableHeadersVisualStyles = false;
             this.dgvEngin.Location = new System.Drawing.Point(12, 91);
             this.dgvEngin.Name = "dgvEngin";
+            this.dgvEngin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEngin.RowHeadersVisible = false;
             this.dgvEngin.RowHeadersWidth = 51;
             this.dgvEngin.RowTemplate.Height = 24;
             this.dgvEngin.Size = new System.Drawing.Size(462, 156);
@@ -272,7 +338,7 @@
             this.lblNumMission.BackColor = System.Drawing.Color.Transparent;
             this.lblNumMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lblNumMission.Location = new System.Drawing.Point(35, 30);
+            this.lblNumMission.Location = new System.Drawing.Point(1284, 21);
             this.lblNumMission.Name = "lblNumMission";
             this.lblNumMission.Size = new System.Drawing.Size(166, 32);
             this.lblNumMission.TabIndex = 3;
@@ -284,7 +350,7 @@
             this.lblDateMission.BackColor = System.Drawing.Color.Transparent;
             this.lblDateMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lblDateMission.Location = new System.Drawing.Point(1154, 30);
+            this.lblDateMission.Location = new System.Drawing.Point(27, 21);
             this.lblDateMission.Name = "lblDateMission";
             this.lblDateMission.Size = new System.Drawing.Size(213, 32);
             this.lblDateMission.TabIndex = 4;
@@ -320,11 +386,22 @@
             this.lblTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lblTitre.Location = new System.Drawing.Point(582, 51);
+            this.lblTitre.Location = new System.Drawing.Point(574, 42);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(350, 51);
             this.lblTitre.TabIndex = 7;
             this.lblTitre.Text = "Nouvelle Mission";
+            // 
+            // pnlTitre
+            // 
+            this.pnlTitre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlTitre.Controls.Add(this.lblTitre);
+            this.pnlTitre.Controls.Add(this.lblDateMission);
+            this.pnlTitre.Controls.Add(this.lblNumMission);
+            this.pnlTitre.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitre.Name = "pnlTitre";
+            this.pnlTitre.Size = new System.Drawing.Size(1530, 133);
+            this.pnlTitre.TabIndex = 8;
             // 
             // ucNewMission
             // 
@@ -333,11 +410,9 @@
             this.BackColor = System.Drawing.Color.Firebrick;
             this.BackgroundImage = global::LibraryUserControl.Properties.Resources.fond1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.lblTitre);
+            this.Controls.Add(this.pnlTitre);
             this.Controls.Add(this.btnConsulter);
             this.Controls.Add(this.btnValide);
-            this.Controls.Add(this.lblDateMission);
-            this.Controls.Add(this.lblNumMission);
             this.Controls.Add(this.grpMobilisationPompier);
             this.Controls.Add(this.grpRegulateur);
             this.Controls.Add(this.grpInfoUsage);
@@ -352,8 +427,9 @@
             this.grpMobilisationPompier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPompierMobilisee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEngin)).EndInit();
+            this.pnlTitre.ResumeLayout(false);
+            this.pnlTitre.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -384,5 +460,6 @@
         private System.Windows.Forms.Button btnValide;
         private System.Windows.Forms.Button btnConsulter;
         private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Panel pnlTitre;
     }
 }

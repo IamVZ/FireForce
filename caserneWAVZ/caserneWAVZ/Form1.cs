@@ -13,7 +13,7 @@ using NewMission;
 
 namespace caserneWAVZ
 {
-    public partial class Form1 : Form
+    public partial class frmFireForce : Form
     {
         private LibraryUserControl.TableauDeBord tableauDeBord;
         private ucStatistique Statistique;
@@ -21,7 +21,7 @@ namespace caserneWAVZ
         private ucGestionEngin ucEngin;
         private ucGestionPersonnel ucPersonnel;
 
-        public Form1()
+        public frmFireForce()
         {
             InitializeComponent();
             MesDatas.FillDs();
@@ -29,7 +29,8 @@ namespace caserneWAVZ
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //btnTab_Click_1(btnTab1, EventArgs.Empty);
+            pbLogo.Image = Properties.Resources.logo;
         }
 
         private void btnNewMission_Click(object sender, EventArgs e)
@@ -40,6 +41,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
+                btnTab1.BackColor = Color.FromArgb(90, 0, 0);
+                btnTab1.Font = new Font(btnTab1.Font.FontFamily, 16, btnTab1.Font.Style);
             }
             // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
             if (ucEngin != null)
@@ -47,6 +50,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucEngin);
                 ucEngin.Dispose();
                 ucEngin = null;
+                btnEngin.BackColor = Color.FromArgb(90, 0, 0);
+                btnEngin.Font = new Font(btnEngin.Font.FontFamily, 16, btnEngin.Font.Style);
             }
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
@@ -54,6 +59,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
+                btnGestionPersonnel.BackColor = Color.FromArgb(90, 0, 0);
+                btnGestionPersonnel.Font = new Font(btnGestionPersonnel.Font.FontFamily, 16, btnGestionPersonnel.Font.Style);
             }
             // Enlève de l'écran les statistiques si elles sont dejà présentent
             if (Statistique != null)
@@ -61,6 +68,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(Statistique);
                 Statistique.Dispose();
                 Statistique = null;
+                btnStatistique.BackColor = Color.FromArgb(90, 0, 0);
+                btnStatistique.Font = new Font(btnStatistique.Font.FontFamily, 16, btnStatistique.Font.Style);
             }
 
 
@@ -251,6 +260,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
+                btnNewMission.BackColor = Color.FromArgb(90, 0, 0);
+                btnNewMission.Font = new Font(btnNewMission.Font.FontFamily, 16, btnNewMission.Font.Style);
             }
             // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
             if (ucEngin != null)
@@ -258,6 +269,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucEngin);
                 ucEngin.Dispose();
                 ucEngin = null;
+                btnEngin.BackColor = Color.FromArgb(90, 0, 0);
+                btnEngin.Font = new Font(btnEngin.Font.FontFamily, 16, btnEngin.Font.Style);
             }
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
@@ -265,6 +278,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
+                btnGestionPersonnel.BackColor = Color.FromArgb(90, 0, 0);
+                btnGestionPersonnel.Font = new Font(btnGestionPersonnel.Font.FontFamily, 16, btnGestionPersonnel.Font.Style);
             }
             // Enlève de l'écran les statistiques si elles sont dejà présentent
             if (Statistique != null)
@@ -272,17 +287,28 @@ namespace caserneWAVZ
                 this.Controls.Remove(Statistique);
                 Statistique.Dispose();
                 Statistique = null;
+                btnStatistique.BackColor = Color.FromArgb(90, 0, 0);
+                btnStatistique.Font = new Font(btnStatistique.Font.FontFamily, 16, btnStatistique.Font.Style);
             }
 
-            tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
+            if (tableauDeBord != null)
+            {
+                
+            }
+            else
+            {
+                tableauDeBord = new LibraryUserControl.TableauDeBord(MesDatas.DsGlobal);
                 tableauDeBord.GetMissionInfos = ObtenirInfosMission;
                 tableauDeBord.ValiderMission = MarquerMissionTerminee;
                 tableauDeBord.GetMissionsEnCours = ObtenirMissionsEnCours;
                 tableauDeBord.GetAllMission = ObtenirTouteLesMissionsEnCours;
                 tableauDeBord.Location = new Point(330, 12);
+                btnTab1.BackColor = Color.FromArgb(50, 0, 0);
+                btnTab1.Font = new Font(btnTab1.Font.FontFamily, 18, btnTab1.Font.Style);
 
                 this.Controls.Add(tableauDeBord);
-                btnTab1.Enabled = false; // désactive après ajout
+                //btnTab1.Enabled = false; // désactive après ajout
+                
 
                 // Quand on ferme ou supprime le tableau de bord : le bouton sera réactivé (tu peux appeler cette logique où tu le retires)
                 tableauDeBord.Disposed += (s, args) =>
@@ -299,7 +325,7 @@ namespace caserneWAVZ
                 }
 
                 tableauDeBord.InitialiserCasesAvecMissions(ids);
-
+            }
         }
 
         private void btnEngin_Click(object sender, EventArgs e)
@@ -310,6 +336,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
+                btnNewMission.BackColor = Color.FromArgb(90, 0, 0);
+                btnNewMission.Font = new Font(btnNewMission.Font.FontFamily, 16, btnNewMission.Font.Style);
             }
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
@@ -317,6 +345,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
+                btnTab1.BackColor = Color.FromArgb(90, 0, 0);
+                btnTab1.Font = new Font(btnTab1.Font.FontFamily, 16, btnTab1.Font.Style);
             }
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
@@ -324,6 +354,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
+                btnGestionPersonnel.BackColor = Color.FromArgb(90, 0, 0);
+                btnGestionPersonnel.Font = new Font(btnGestionPersonnel.Font.FontFamily, 16, btnGestionPersonnel.Font.Style);
             }
             // Enlève de l'écran les statistiques si elles sont dejà présentent
             if (Statistique != null)
@@ -331,6 +363,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(Statistique);
                 Statistique.Dispose();
                 Statistique = null;
+                btnStatistique.BackColor = Color.FromArgb(90, 0, 0);
+                btnStatistique.Font = new Font(btnStatistique.Font.FontFamily, 16, btnStatistique.Font.Style);
             }
             ucEngin = new ucGestionEngin(MesDatas.DsGlobal)
             {
@@ -350,8 +384,36 @@ namespace caserneWAVZ
         private void btnTab1_MouseLeave(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.FromArgb(90, 0, 0);
-            btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            if (tableauDeBord != null && btn == btnTab1)
+            {
+                btn.BackColor = Color.FromArgb(50, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
+            else if(ucNM != null && btn == btnNewMission)
+            {
+                btn.BackColor = Color.FromArgb(50, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
+            else if (ucPersonnel != null && btn == btnGestionPersonnel)
+            {
+                btn.BackColor = Color.FromArgb(50, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
+            else if (ucEngin != null && btn == btnEngin)
+            {
+                btn.BackColor = Color.FromArgb(50, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
+            else if (Statistique != null && btn == btnStatistique)
+            {
+                btn.BackColor = Color.FromArgb(50, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
+            else
+            {
+                btn.BackColor = Color.FromArgb(90, 0, 0);
+                btn.Font = new Font(btn.Font.FontFamily, 16, btn.Font.Style);
+            }
         }
 
         private void btnStatistique_Click(object sender, EventArgs e)
@@ -362,6 +424,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
+                btnNewMission.BackColor = Color.FromArgb(90, 0, 0);
+                btnNewMission.Font = new Font(btnNewMission.Font.FontFamily, 16, btnNewMission.Font.Style);
             }
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
@@ -369,6 +433,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
+                btnTab1.BackColor = Color.FromArgb(90, 0, 0);
+                btnTab1.Font = new Font(btnTab1.Font.FontFamily, 16, btnTab1.Font.Style);
             }
             // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
             if (ucEngin != null)
@@ -376,6 +442,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucEngin);
                 ucEngin.Dispose();
                 ucEngin = null;
+                btnEngin.BackColor = Color.FromArgb(90, 0, 0);
+                btnEngin.Font = new Font(btnEngin.Font.FontFamily, 16, btnEngin.Font.Style);
             }
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
@@ -383,6 +451,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
+                btnGestionPersonnel.BackColor = Color.FromArgb(90, 0, 0);
+                btnGestionPersonnel.Font = new Font(btnGestionPersonnel.Font.FontFamily, 16, btnGestionPersonnel.Font.Style);
             }
 
             Statistique = new ucStatistique(Connexion.Connec);
@@ -407,6 +477,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
+                btnNewMission.BackColor = Color.FromArgb(90, 0, 0);
+                btnNewMission.Font = new Font(btnNewMission.Font.FontFamily, 16, btnNewMission.Font.Style);
             }
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
@@ -414,6 +486,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
+                btnTab1.BackColor = Color.FromArgb(90, 0, 0);
+                btnTab1.Font = new Font(btnTab1.Font.FontFamily, 16, btnTab1.Font.Style);
             }
             // Enlève l'onglet Engin si jamais il est dejà présent à l'écran
             if (ucEngin != null)
@@ -421,6 +495,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(ucEngin);
                 ucEngin.Dispose();
                 ucEngin = null;
+                btnEngin.BackColor = Color.FromArgb(90, 0, 0);
+                btnEngin.Font = new Font(btnEngin.Font.FontFamily, 16, btnEngin.Font.Style);
             }
             // Enlève de l'écran les statistiques si elles sont dejà présentent
             if (Statistique != null)
@@ -428,6 +504,8 @@ namespace caserneWAVZ
                 this.Controls.Remove(Statistique);
                 Statistique.Dispose();
                 Statistique = null;
+                btnStatistique.BackColor = Color.FromArgb(90, 0, 0);
+                btnStatistique.Font = new Font(btnStatistique.Font.FontFamily, 16, btnStatistique.Font.Style);
             }
             ucPersonnel = new ucGestionPersonnel(Connexion.Connec, MesDatas.DsGlobal)
             {
@@ -439,7 +517,7 @@ namespace caserneWAVZ
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); 
         }
     }
 }

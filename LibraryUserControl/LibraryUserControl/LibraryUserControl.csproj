@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewPompier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewPompier.Designer.cs">
+      <DependentUpon>NewPompier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +104,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NewPompier.resx">
+      <DependentUpon>NewPompier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Statistique.resx">
       <DependentUpon>Statistique.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +238,48 @@
   <ItemGroup>
     <None Include="bin\Debug\VSS.jpg" />
     <None Include="Resources\pompier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\ADC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\ADJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\CCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\CDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\CNE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\COL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\CPL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\Grade Sapeurs pompiers.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\LCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\LTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\SAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\SAP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\SCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ImagesGrades\SGT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
