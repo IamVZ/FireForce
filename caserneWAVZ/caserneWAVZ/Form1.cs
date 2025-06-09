@@ -38,6 +38,7 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
+
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -559,13 +560,21 @@ namespace caserneWAVZ
 
         private void MettreAjourDB(string table)
         {
-            SQLiteDataAdapter da = new SQLiteDataAdapter("select * from "+table, Connexion.Connec);
+            try
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter("select * from "+table, Connexion.Connec);
             da.Fill(MesDatas.DsGlobal.Tables[table]);
             SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
             da.UpdateCommand = builder.GetUpdateCommand();
             da.InsertCommand = builder.GetInsertCommand();
             da.DeleteCommand = builder.GetDeleteCommand();
             da.Update(MesDatas.DsGlobal.Tables[table]);
+            }
+            catch(DBConcurrencyException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            
         }
 
         private void MettreAjourDS(string table)

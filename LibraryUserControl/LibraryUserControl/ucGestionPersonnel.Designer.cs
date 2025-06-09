@@ -769,6 +769,7 @@
             this.Name = "ucGestionPersonnel";
             this.Size = new System.Drawing.Size(1530, 950);
             this.Load += new System.EventHandler(this.ucGestionPersonnel_Load);
+            this.ParentChanged += new System.EventHandler(this.ucGestionPersonnel_ParentChanged);
             this.pnlTitre.ResumeLayout(false);
             this.pnlTitre.PerformLayout();
             this.pnlinfoPompier.ResumeLayout(false);

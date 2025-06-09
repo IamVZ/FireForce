@@ -558,5 +558,20 @@ namespace LibraryUserControl
         {
 
         }
+
+        private void ucGestionPersonnel_ParentChanged(object sender, EventArgs e)
+        {
+            MettreAjourDB("Pompier");
+        }
+        private void MettreAjourDB(string table)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter("select * from " + table, connec);
+            da.Fill(dsGlobal.Tables[table]);
+            SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
+            da.UpdateCommand = builder.GetUpdateCommand();
+            da.InsertCommand = builder.GetInsertCommand();
+            da.DeleteCommand = builder.GetDeleteCommand();
+            da.Update(dsGlobal.Tables[table]);
+        }
     }
 }
