@@ -385,12 +385,6 @@ namespace LibraryUserControl
             }
         }
 
-
-        private void chkEnCours_CheckStateChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TableauDeBord_Load(object sender, EventArgs e)
         {
 

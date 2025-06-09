@@ -48,18 +48,6 @@ namespace LibraryUserControl
             pnlHabilitation.Visible = false;
             btnValider.Visible = false;
 
-            /*rdbFeminin.FlatAppearance.MouseOverBackColor = rdbFeminin.BackColor;
-            rdbFeminin.FlatAppearance.MouseDownBackColor = rdbFeminin.BackColor;
-
-            rdbMasculin.FlatAppearance.MouseOverBackColor = rdbMasculin.BackColor;
-            rdbMasculin.FlatAppearance.MouseDownBackColor = rdbMasculin.BackColor;
-
-            rdbVolontaire.FlatAppearance.MouseOverBackColor = rdbVolontaire.BackColor;
-            rdbVolontaire.FlatAppearance.MouseDownBackColor = rdbVolontaire.BackColor;
-
-            rdbPro.FlatAppearance.MouseOverBackColor = rdbPro.BackColor;
-            rdbPro.FlatAppearance.MouseDownBackColor = rdbPro.BackColor;*/
-
             dtGrade = new DataTable();
             dtGrade.Columns.Add("code");
             dtGrade.Columns.Add("libelle");

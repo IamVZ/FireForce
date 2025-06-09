@@ -50,7 +50,6 @@
             this.chkEnCours.Text = "En cours";
             this.chkEnCours.UseVisualStyleBackColor = false;
             this.chkEnCours.CheckedChanged += new System.EventHandler(this.chkEnCours_CheckedChanged);
-            this.chkEnCours.CheckStateChanged += new System.EventHandler(this.chkEnCours_CheckStateChanged);
             // 
             // lblTabBord
             // 

@@ -38,6 +38,10 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -56,6 +60,8 @@ namespace caserneWAVZ
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
             {
+                MettreAjourDS("Pompier");
+
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
@@ -257,6 +263,12 @@ namespace caserneWAVZ
             // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
             if (ucNM != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+                MettreAjourDB("Mobiliser");
+                MettreAjourDB("PartirAvec");
+
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
@@ -275,6 +287,8 @@ namespace caserneWAVZ
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
             {
+                MettreAjourDS("Pompier");
+
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
@@ -333,6 +347,12 @@ namespace caserneWAVZ
             // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
             if (ucNM != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+                MettreAjourDB("Mobiliser");
+                MettreAjourDB("PartirAvec");
+
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
@@ -342,6 +362,10 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -351,6 +375,8 @@ namespace caserneWAVZ
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
             {
+                MettreAjourDS("Pompier");
+
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
@@ -421,6 +447,12 @@ namespace caserneWAVZ
             // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
             if (ucNM != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+                MettreAjourDB("Mobiliser");
+                MettreAjourDB("PartirAvec");
+
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
@@ -430,6 +462,10 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -448,6 +484,8 @@ namespace caserneWAVZ
             // Enlève l'onglet gestion du personnel si jamais il est dejà présent à l'écran
             if (ucPersonnel != null)
             {
+                MettreAjourDS("Pompier");
+
                 this.Controls.Remove(ucPersonnel);
                 ucPersonnel.Dispose();
                 ucPersonnel = null;
@@ -474,6 +512,12 @@ namespace caserneWAVZ
             // Si l'onglet nouvelle mission est déjà ouvert, on la rend invisible
             if (ucNM != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+                MettreAjourDB("Mobiliser");
+                MettreAjourDB("PartirAvec");
+
                 this.Controls.Remove(ucNM);
                 ucNM.Dispose();
                 ucNM = null;
@@ -483,6 +527,10 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
+                MettreAjourDB("Pompier");
+                MettreAjourDB("Mission");
+                MettreAjourDB("Engin");
+
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -518,6 +566,29 @@ namespace caserneWAVZ
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
+        }
+
+        //////////////////////////
+        /// Fonction Annexe //////
+        //////////////////////////
+        ///
+
+        private void MettreAjourDB(string table)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter("select * from "+table, Connexion.Connec);
+            da.Fill(MesDatas.DsGlobal.Tables[table]);
+            SQLiteCommandBuilder builder = new SQLiteCommandBuilder(da);
+            da.UpdateCommand = builder.GetUpdateCommand();
+            da.InsertCommand = builder.GetInsertCommand();
+            da.DeleteCommand = builder.GetDeleteCommand();
+            da.Update(MesDatas.DsGlobal.Tables[table]);
+        }
+
+        private void MettreAjourDS(string table)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter("select * from " + table, Connexion.Connec);
+            MesDatas.DsGlobal.Tables[table].Clear();
+            da.Fill(MesDatas.DsGlobal.Tables[table]);
         }
     }
 }
