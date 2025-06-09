@@ -38,9 +38,6 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
-                MettreAjourDB("Pompier");
-                MettreAjourDB("Engin");
-
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -361,10 +358,6 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
-                MettreAjourDB("Pompier");
-                MettreAjourDB("Mission");
-                MettreAjourDB("Engin");
-
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -461,10 +454,6 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
-                MettreAjourDB("Pompier");
-                MettreAjourDB("Mission");
-                MettreAjourDB("Engin");
-
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
@@ -526,9 +515,6 @@ namespace caserneWAVZ
             // Enlève de l'écran le tableau de bord si il est dejà présent
             if (tableauDeBord != null)
             {
-
-
-
                 this.Controls.Remove(tableauDeBord);
                 tableauDeBord.Dispose();
                 tableauDeBord = null;
