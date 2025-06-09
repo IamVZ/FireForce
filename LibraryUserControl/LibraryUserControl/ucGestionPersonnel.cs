@@ -553,5 +553,10 @@ namespace LibraryUserControl
                 btn.Font = new Font(btn.Font.FontFamily, 14, btn.Font.Style);
             }
         }
+
+        private void pnlLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -618,6 +618,7 @@
             this.pnlLogin.Size = new System.Drawing.Size(1530, 950);
             this.pnlLogin.TabIndex = 16;
             this.pnlLogin.Visible = false;
+            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
             // 
             // panel3
             // 
