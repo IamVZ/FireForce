@@ -565,6 +565,12 @@ namespace caserneWAVZ
             da.UpdateCommand = builder.GetUpdateCommand();
             da.InsertCommand = builder.GetInsertCommand();
             da.DeleteCommand = builder.GetDeleteCommand();
+            SQLiteCommand updateCmd = builder.GetUpdateCommand();
+            SQLiteCommand insertCmd = builder.GetInsertCommand();
+            SQLiteCommand deleteCmd = builder.GetDeleteCommand();
+
+            // Pour les afficher dans la console, ou dans un MessageBox
+
             da.Update(MesDatas.DsGlobal.Tables[table]);
         }
 
