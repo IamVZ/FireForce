@@ -56,14 +56,16 @@ namespace LibraryUserControl
             // Initialiser toutes les missions avec chacune une case
             pnlMission.Controls.Clear();
 
+
             // Suspend la mise en page pour éviter les refreshs multiples
             pnlMission.SuspendLayout();
 
             // Position de départ
             int x = 200;
             int y = 20;
-            idMissions.Sort();        
-            idMissions.Reverse();      
+            idMissions.Sort();
+            idMissions.Reverse();
+
             // Pour chaque id dans la liste
             foreach (int id in idMissions)
             {

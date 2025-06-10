@@ -281,6 +281,75 @@
   <ItemGroup>
     <None Include="bin\Debug\ImagesGrades\SGT.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CNE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SGT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BRS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CCF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EPA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FCYN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FPT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VID.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VPC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSAV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VSS.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
