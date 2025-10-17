@@ -12,9 +12,30 @@ d’administration.
 - Volet 5 : Statistiques à destination du régulateur.
 
 # Image
+## Tableau de bord
+## Nouvelle mission
+## Gestion engins
+## Statistique
+## Gestion personnel
 
 
-# Cahier des charges (<a href="./Document Annexe/Sujet SAE 24 Caserne - Session 2025.pdf">lien</a>)
+# Guide d'installation
+outils necéssaire : Visual Studio Comunity
+
+1) télécharger le zip du projet depuis le github
+2) en raison des "Mark of the Web" appliqué par Windows
+   * Clique droit sur Form1.resx
+   * séléctionner "propriété"
+   * dans l'onglet "général" cocher débloquer en bas à droite de la fenêtre
+   * appuyer sur appliquer
+   * ouvrir le projet "caserneWAVZ.sln"
+4) déplacer la base de donné "SDIS67.db" dans le répertoire "caserneWAVZ/bin/debug"
+   * si "caserne/bin" n'existe pas : compiler le projet --> cela le créera automatiquement
+6) n'ayant pas d'executable, lancer le projet via Visual Studio Comunity
+
+# Cahier des charges 
+(<a href="./Document Annexe/Sujet SAE 24 Caserne - Session 2025.pdf">Consulter le cahier des charges</a>)
 
 
-#Technolmogie utilisé : C#, .Net, WinForm, Sql
+# Technolmogie utilisé : 
+C#, .Net, WinForm, Sql
