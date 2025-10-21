@@ -13,15 +13,24 @@ d’administration.
 
 # Image
 ## Tableau de bord
-<img src="Documtent Annexe/Image/Tableau de bord.png">
+
+<img src="Document Annexe/Image/Tableau de bord.png" width="500" height="auto">
+
 ## Nouvelle mission
-<img src="Documtent Annexe/Image/Nouvelle Mission.png">
+
+<img src="Document Annexe/Image/Nouvelle Mission.png" width="500" height="auto">
+
 ## Gestion engins
-<img src="Documtent Annexe/Image/Gestion Engins.png">
+
+<img src="Document Annexe/Image/Gestion Engins.png" width="500" height="auto">
+
 ## Statistique
-<img src="Documtent Annexe/Image/Statistiques.png">
+
+<img src="Document Annexe/Image/Statistiques.png" width="500" height="auto">
+
 ## Gestion personnel
-<img src="Documtent Annexe/Image/Gestion personnel.png">
+
+<img src="Document Annexe/Image/Gestion du personnel.png" width="500" height="auto">
 
 # Guide d'installation
 outils necéssaire : Visual Studio Comunity
